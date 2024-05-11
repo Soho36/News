@@ -1,8 +1,18 @@
-class Author(models.Model):
-    full_name = models.CharField(max_length=64)
-    name = models.CharField(null=True, max_length=64)
+string = ('В качестве результата задания подготовьте файл, '
+          'в котором напишете список всех команд, запускаемых в Django shell.')
 
-    def some_method(self):
-        self.name = self.full_name.split()[0]
 
-    self.save()
+def joined(strr):
+    result = strr[:5] + ' ...'
+
+    return result
+
+
+result2 = joined(string)
+
+print(result2)
+
+
+# dd = list(string)
+# dd.append('...')
+# print(dd)
