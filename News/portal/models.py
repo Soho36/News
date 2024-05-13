@@ -17,7 +17,7 @@ class Author(models.Model):
                 Post.objects.filter(author=self).aggregate(total_rating=Sum('post_rating'))['total_rating']
                 or 0
         )
-        post_rating *= 3  # Multiply by 3 as per your adjustment
+        post_rating *= 3  # Multiply by 3
 
         # Calculate total comment rating
         comment_rating = (

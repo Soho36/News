@@ -1,0 +1,29 @@
+
+python manage.py makemigrations
+python manage.py migrate
+from portal.models import *
+
+user1=User.objects.create_user('Vasja')
+user1=User.objects.create_user(username='Ivan')
+auth1=Author.objects.create(user=user2)
+category1=Category.objects.create(category_name='Markets')
+post1=Post.objects.create(author=auth1, article_or_news=True, post_header='Header of post1', post_text='Text of post1')
+post1=Post.objects.get(pk=1)
+postcategory1=PostCategory.objects.create(post=post1, category=category1)
+postcategory2=PostCategory.objects.create(post=post1, category=category2)
+comment1=Comment.objects.create(post=post1,user=user1, comment_text='very good!')
+comment2=Comment.objects.create(post=post2,user=user3, comment_text='wow!')       
+comment3=Comment.objects.create(post=post3,user=user3, comment_text='perfect wow!')
+comment4=Comment.objects.create(post=post3,user=user1, comment_text='what a bullshit!')
+comment=Comment.objects.get(pk=1)
+comment1.like_dislike(True)
+commen2.like_dislike(False)
+post=Post.objects.get(pk=1)
+post.like_dislike(True)
+auth1=Author.objects.get(pk=4) 
+auth1.update_rating()
+Author.objects.all().order_by('-user_rating').values('user__username', 'user_rating')[:1]
+bestpost=Post.objects.all().order_by('-post_rating').values('id', 'creation_time', 'author__user__username', 'post_rating', 'post_header')[:1]
+best_post_obj = Post.objects.get(pk=bestpost[0]['id'])
+best_post_obj.preview()
+comments_of_bestpost=Comment.objects.filter(post_id=bestpost[0]['id']).values('comment_text')
