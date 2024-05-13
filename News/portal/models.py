@@ -3,25 +3,32 @@ from django.contrib.auth.models import User
 from django.db.models import Sum
 
 
+class Category(models.Model):
+    category_name = models.CharField(max_length=255, unique=True)
+
+
 class Author(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     user_rating = models.IntegerField(default=0)
 
-    def __init__(self, *args, **kwargs):
-        super().__init__(args, kwargs)
-        self.comments = None
-        self.posts = None
-
     def update_rating(self):
         # Calculate total post rating
-        post_rating = (self.posts.aggregate(total_rating=Sum('post_rating'))['total_rating']) * 3 or 0
+        post_rating = (
+                Post.objects.filter(author=self).aggregate(total_rating=Sum('post_rating'))['total_rating']
+                or 0
+        )
+        post_rating *= 3  # Multiply by 3 as per your adjustment
 
         # Calculate total comment rating
-        comment_rating = self.comments.aggregate(total_rating=Sum('comment_rating'))['total_rating'] or 0
+        comment_rating = (
+                Comment.objects.filter(user=self.user).aggregate(total_rating=Sum('comment_rating'))['total_rating']
+                or 0
+        )
 
         # Calculate total rating of comments on posts authored by the author
         post_comments_rating = (
-            sum(comment.comment_rating for post in self.posts.all() for comment in post.comments.all())
+                Comment.objects.filter(post__author__user=self.user).aggregate(total_rating=Sum('comment_rating'))
+                ['total_rating'] or 0
         )
 
         # Update user rating
@@ -29,12 +36,9 @@ class Author(models.Model):
         self.save()
 
 
-class Category(models.Model):
-    category_name = models.CharField(max_length=255, unique=True)
-
-
 class Post(models.Model):
-    author = models.ForeignKey(Author, on_delete=models.CASCADE)
+    objects = models.Manager()
+    author = models.ForeignKey(Author, on_delete=models.CASCADE, related_name='posts')
     article_or_news = models.BooleanField(default=False)        # True for Article, False for News
     creation_time = models.DateTimeField(auto_now_add=True)     # Post creation time
     category = models.ManyToManyField(Category, through='PostCategory')
@@ -60,6 +64,7 @@ class PostCategory(models.Model):
 
 
 class Comment(models.Model):
+    objects = models.Manager()
     post = models.ForeignKey(Post, on_delete=models.CASCADE, related_name='comments')
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     comment_text = models.TextField()
@@ -72,5 +77,7 @@ class Comment(models.Model):
         elif int(self.comment_rating) > 0:  # Ensure rating doesn't go negative
             self.comment_rating -= 1
         self.save()
+
+
 
 

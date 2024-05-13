@@ -1,18 +1,19 @@
-string = ('В качестве результата задания подготовьте файл, '
-          'в котором напишете список всех команд, запускаемых в Django shell.')
+class Author(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    user_rating = models.IntegerField(default=0)
 
+    def update_rating(self):
+        # Calculate total post rating
+        post_rating = (self.posts.aggregate(total_rating=Sum('post_rating'))['total_rating']) * 3 or 0
 
-def joined(strr):
-    result = strr[:5] + ' ...'
+        # Calculate total comment rating
+        comment_rating = self.comments.aggregate(total_rating=Sum('comment_rating'))['total_rating'] or 0
 
-    return result
+        # Calculate total rating of comments on posts authored by the author
+        post_comments_rating = (
+            sum(comment.comment_rating for post in self.posts.all() for comment in post.comments.all())
+        )
 
-
-result2 = joined(string)
-
-print(result2)
-
-
-# dd = list(string)
-# dd.append('...')
-# print(dd)
+        # Update user rating
+        self.user_rating = post_rating + comment_rating + post_comments_rating
+        self.save()
