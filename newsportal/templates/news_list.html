@@ -1,6 +1,6 @@
-
 {% extends 'flatpages/default.html' %}
 
+{% load custom_filters %}
 {% block title %}
 News
 {% endblock title %}
@@ -10,21 +10,21 @@ News
 <hr>
 <table>
        <tr>
-           <td>Name</td>
-           <td>Description</td>
-           <td>Category</td>
-           <td>Published on:</td>
+           <td><strong>Name</strong></td>
+           <td><strong>Description</strong></td>
+           <td><strong>Category</strong></td>
+           <td><strong>Published on:</strong></td>
        </tr>
 
 <!--           Beginning of the loop. For each news new line will be generated -->
        {% for news_list in news_list %}
        <tr>
            <td>
-                <a href="{% url 'news_detail' news_list.id %}">{{ news_list.name|truncatewords:4 }}</a>
+                <a href="{% url 'news_detail' news_list.id %}">{{ news_list.name|censor_bad_words|truncatewords:10 }}</a>
            </td>
            <td>{{ news_list.description|truncatewords:7|safe }}</td>
            <td>{{ news_list.category.name }}</td>
-           <td>{{ news_list.published_date }}</td>
+           <td><i>{{ news_list.published_date }}</i></td>
        </tr>
        {% endfor %}
 

@@ -1,4 +1,5 @@
 {% extends 'flatpages/default.html' %}
+{% load custom_filters %}
 
 {% block title %}
 News
@@ -6,6 +7,6 @@ News
 
 
 {% block content %}
-<h1>{{ news_detail.name|safe }}</h1>
+<h1>{{ news_detail.name|censor_bad_words|safe }}</h1>
 <p>{{ news_detail.description|safe }}</p>
 {% endblock content %}
