@@ -1,3 +1,4 @@
+
 {% extends 'flatpages/default.html' %}
 
 {% block title %}
@@ -12,6 +13,7 @@ News
            <td>Name</td>
            <td>Description</td>
            <td>Category</td>
+           <td>Published on:</td>
        </tr>
 
 <!--           Beginning of the loop. For each news new line will be generated -->
@@ -20,8 +22,9 @@ News
            <td>
                 <a href="{% url 'news_detail' news_list.id %}">{{ news_list.name|truncatewords:4 }}</a>
            </td>
-           <td>{{ news_list.description|truncatewords:10|safe }}</td>
+           <td>{{ news_list.description|truncatewords:7|safe }}</td>
            <td>{{ news_list.category.name }}</td>
+           <td>{{ news_list.published_date }}</td>
        </tr>
        {% endfor %}
 

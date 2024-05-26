@@ -1,11 +1,12 @@
 from django.views.generic import ListView, DetailView
 from django.shortcuts import render, get_object_or_404
 from .models import News, Category
+from django.shortcuts import render
 
 
 class NewsList(ListView):
     model = News
-    ordering = 'name'
+    ordering = ['-published_date']
     template_name = 'news_list.html'
     context_object_name = 'news_list'
 
