@@ -8,5 +8,5 @@ class ProductsList(ListView):
     queryset = Product.objects.filter(
         price__lt=300
     )
-    template_name = 'products.html'
+    template_name = 'news_list.html'
     context_object_name = 'products'

@@ -9,7 +9,7 @@ class ProductsList(ListView):
     model = Product
     ordering = 'name'
     # queryset = Product.objects.filter(price__lt=1000)
-    template_name = 'products.html'
+    template_name = 'news_list.html'
     context_object_name = 'products'
 
     def get_context_data(self, **kwargs):
@@ -23,7 +23,7 @@ class ProductsList(ListView):
 
 class ProductDetail(DetailView):
     model = Product
-    template_name = 'product.html'
+    template_name = 'news_detail.html'
     context_object_name = 'product'
 
 

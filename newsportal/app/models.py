@@ -1,13 +1,15 @@
 from django.db import models
-from django.core.validators import MinValueValidator
+# from django.core.validators import MinValueValidator
 
 
 class News(models.Model):
-    name = models.CharField(max_length=50, unique=True)
+    name = models.CharField(max_length=150, unique=True)
     description = models.TextField()
-    quantity = models.IntegerField(validators=[MinValueValidator(0)])
     category = models.ForeignKey(to='Category', on_delete=models.CASCADE, related_name='news')
-    price = models.FloatField(validators=[MinValueValidator(0.0)])
+    # published_date = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        verbose_name_plural = "News"
 
     def __str__(self):
         return f'{self.name.title()}: {self.description[:20]}'
@@ -16,6 +18,9 @@ class News(models.Model):
 class Category(models.Model):
 
     name = models.CharField(max_length=100, unique=True)
+
+    class Meta:
+        verbose_name_plural = "Categories"
 
     def __str__(self):
         return self.name.title()
