@@ -11,43 +11,45 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
     </head>
-    <body>
-        <!-- Responsive navbar-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
-           <div class="container">
-               <a class="navbar-brand" href="/news/">NEWS FINANCE</a>
-               <button class="navbar-toggler" type="button" data-toggle="collapse"
-                       data-target="#navbarResponsive"
-                       aria-controls="navbarResponsive" aria-expanded="false"
-                       aria-label="Toggle navigation">
-                   <span class="navbar-toggler-icon"></span>
-               </button>
-               <div class="collapse navbar-collapse" id="navbarResponsive">
-                   <ul class="navbar-nav ml-auto">
-                       <li class="nav-item">
-                           <a class="nav-link" href="/stock_market/">Stock Market</a>
-                       </li>
-                       <li class="nav-item">
-                           <a class="nav-link" href="/economics/">Economics</a>
-                       </li>
-                       <li class="nav-item">
-                           <a class="nav-link" href="/housing/">Housing</a>
-                       </li>
-                   </ul>
-               </div>
-           </div>
-        </nav>
-        <!-- Page content-->
+
+<body>
+    <!-- Responsive navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <div class="container">
-           <div class="row">
-               <div class="col-lg-12 text-center">
-                   {% block content %}
-                   <hr>
-                   {{ flatpage.content }}
-                   <hr>
-                   {% endblock content %}
-               </div>
-           </div>
+            <a class="navbar-brand" href="{% url 'news_list' %}">NEWS FINANCE</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarResponsive"
+                    aria-controls="navbarResponsive" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'news_by_category' category_name='Stock Market' %}">Stock Market</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'news_by_category' category_name='Economics' %}">Economics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'news_by_category' category_name='Housing' %}">Housing</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </body>
+    </nav>
+    <!-- Page content-->
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                {% block content %}
+                <hr>
+                {{ flatpage.content }}
+                <hr>
+                {% endblock content %}
+            </div>
+        </div>
+    </div>
+</body>
+
 </html>

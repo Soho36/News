@@ -1,10 +1,9 @@
 from django.urls import path
-from .views import NewsList, NewsDetail
+from .views import NewsList, NewsDetail, NewsByCategory
+
 
 urlpatterns = [
-   path('', NewsList.as_view()),
-   path('<int:pk>', NewsDetail.as_view()),
-   path('stock_market/', NewsList.as_view()),
-   path('economics/', NewsList.as_view()),
-   path('housing/', NewsList.as_view()),
+    path('', NewsList.as_view(), name='news_list'),  # General news page
+    path('<int:pk>/', NewsDetail.as_view(), name='news_detail'),  # News detail page
+    path('category/<str:category_name>/', NewsByCategory.as_view(), name='news_by_category'),  # News by category
 ]

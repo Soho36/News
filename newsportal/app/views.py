@@ -16,16 +16,16 @@ class NewsDetail(DetailView):
     context_object_name = 'news_detail'
 
 
-# class NewsByCategory(ListView):
-#     template_name = 'news_by_category.html'
-#     context_object_name = 'news_items'
-#
-#     def get_queryset(self):
-#         self.category = get_object_or_404(Category, name=self.kwargs['category_name'])
-#         return News.objects.filter(category=self.category)
-#
-#     def get_context_data(self, **kwargs):
-#         context = super().get_context_data(**kwargs)
-#         context['category'] = self.category
-#         return context
+class NewsByCategory(ListView):
+    template_name = 'news_by_category.html'
+    context_object_name = 'news_items'
+
+    def get_queryset(self):
+        self.category = get_object_or_404(Category, name=self.kwargs['category_name'])
+        return News.objects.filter(category=self.category)
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['category'] = self.category
+        return context
 

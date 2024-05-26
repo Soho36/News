@@ -1,0 +1,20 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+{{ category.name }} News
+{% endblock title %}
+
+{% block content %}
+<h1>News in {{ category.name }}</h1>
+<ul>
+    {% for news in news_items %}
+        <li>
+            <h2><a href="{% url 'news_detail' news.pk %}">{{ news.name }}</a></h2>
+            <p>{{ news.content|truncatewords:30 }}</p>
+            <p>Published on: {{ news.published_date }}</p>
+        </li>
+    {% empty %}
+        <li>No news in this category.</li>
+    {% endfor %}
+</ul>
+{% endblock content %}
