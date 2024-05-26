@@ -8,19 +8,23 @@ News
 <h1>All news</h1>
 <hr>
 <table>
-           <tr>
-               <td>Name</td>
-               <td>Description</td>
-               <td>Category</td>
-           </tr>
+       <tr>
+           <td>Name</td>
+           <td>Description</td>
+           <td>Category</td>
+       </tr>
 
 <!--           Beginning of the loop. For each news new line will be generated -->
-           {% for news_list in news_list %}
-           <tr>
-               <td>{{ news_list.name|truncatechars:50 }}</td>
-               <td>{{ news_list.description|truncatechars:150 }}</td>
-               <td>{{ news_list.category.name }}</td>
-           </tr>
-           {% endfor %}
-       </table>
+       {% for news_list in news_list %}
+       <tr>
+           <td>
+                <a href="{% url 'news_detail' news_list.id %}">{{ news_list.name|truncatewords:4 }}</a>
+           </td>
+           <td>{{ news_list.description|truncatewords:10|safe }}</td>
+           <td>{{ news_list.category.name }}</td>
+       </tr>
+       {% endfor %}
+
+</table>
+<hr>
 {% endblock content %}

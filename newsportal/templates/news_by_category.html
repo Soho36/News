@@ -6,15 +6,17 @@
 
 {% block content %}
 <h1>News in {{ category.name }}</h1>
+<hr>
 <ul>
     {% for news in news_items %}
         <li>
-            <h2><a href="{% url 'news_detail' news.pk %}">{{ news.name }}</a></h2>
-            <p>{{ news.content|truncatewords:30 }}</p>
-            <p>Published on: {{ news.published_date }}</p>
+            <h2><a href="{% url 'news_detail' news.pk %}">{{ news.name|truncatewords:7 }}</a></h2>
+            <p>{{ news.description|truncatewords:30|safe }}</p>
+            <p><strong>Published on:</strong> {{ news.published_date }}</p>
         </li>
     {% empty %}
         <li>No news in this category.</li>
     {% endfor %}
 </ul>
+<hr>
 {% endblock content %}

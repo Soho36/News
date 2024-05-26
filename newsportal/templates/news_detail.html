@@ -4,6 +4,8 @@
 News
 {% endblock title %}
 
+
 {% block content %}
-<h1>{{ news_detail }}</h1>
+<h1>{{ news_detail.name|safe }}</h1>
+<p>{{ news_detail.description|safe }}</p>
 {% endblock content %}
