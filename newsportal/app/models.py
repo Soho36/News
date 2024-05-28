@@ -6,8 +6,8 @@ from time import time
 class News(models.Model):
     name = models.CharField(max_length=150, unique=True)
     description = models.TextField()
-    category = models.ForeignKey(to='Category', on_delete=models.CASCADE, related_name='news')
     published_date = models.DateTimeField(auto_now_add=True)
+    category = models.ForeignKey(to='Category', on_delete=models.CASCADE, related_name='news')
 
     class Meta:
         verbose_name_plural = "News"

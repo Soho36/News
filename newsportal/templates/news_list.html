@@ -7,6 +7,14 @@ News
 
 {% block content %}
 <h1>All news</h1>
+
+<!--Add form-->
+   <form method="get">
+       {{ filterset.form.as_p }}
+
+<!--       Form button-->
+       <button type="submit">Search</button>
+   </form>
 <hr>
 <table>
        <tr>
@@ -16,7 +24,7 @@ News
            <td><strong>Published on:</strong></td>
        </tr>
 
-<!--           Beginning of the loop. For each news new line will be generated -->
+<!--    Beginning of the loop. For each news new line will be generated -->
        {% for news_list in news_list %}
        <tr>
            <td>
@@ -28,6 +36,27 @@ News
        </tr>
        {% endfor %}
 
+
 </table>
 <hr>
+
+<!--    Adding pagination-->
+{% if page_obj.has_previous %}
+    <a href="?page=1">1</a>
+    {% if page_obj.previous_page_number != 1 %}
+        <a href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a>
+        {% endif %}
+   {% endif %}
+
+<!-- Current page info -->
+   {{ page_obj.number }}
+
+<!-- Next pages info-->
+{% if page_obj.has_next %}
+    <a href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a>
+       {% if paginator.num_pages != page_obj.next_page_number %}
+            <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+            {% endif %}
+   {% endif %}
+
 {% endblock content %}
