@@ -1,7 +1,8 @@
 from django.views.generic import ListView, DetailView
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from .models import News, Category
 from .filters import NewsFilter
+from .forms import NewsForm
 
 
 class NewsList(ListView):
@@ -9,7 +10,7 @@ class NewsList(ListView):
     ordering = ['-published_date']
     template_name = 'news_list.html'
     context_object_name = 'news_list'
-    paginate_by = 2     # number of entries per page
+    paginate_by = 5     # number of entries per page
 
     def get_queryset(self):
         queryset = super().get_queryset()
@@ -41,3 +42,14 @@ class NewsByCategory(ListView):
         context['category'] = self.category
         return context
 
+
+def create_news(request):
+    if request.method == 'POST':
+        form = NewsForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/news')
+    else:
+        form = NewsForm
+
+    return render(request, 'news_form.html', {'form': form})
