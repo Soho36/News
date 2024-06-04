@@ -18,8 +18,6 @@ class NewsForm(forms.ModelForm):
     def clean(self):
         cleaned_data = super().clean()      # call the 'clean' method of the parent class
         description = cleaned_data.get('description')
-        # if description is not None and len(description) < 20:
-        #     raise ValidationError({"description": "Description cannot be shorter than 20 symbols!"})
         name = cleaned_data.get('name')
         if name == description:
             raise ValidationError({"name": "Name and Description must be different!"})

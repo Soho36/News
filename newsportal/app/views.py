@@ -60,6 +60,7 @@ class NewsUpdate(UpdateView):
     form_class = NewsForm
     model = News
     template_name = 'news_form.html'
+    success_url = reverse_lazy('news_list')
 
 
 class NewsDelete(DeleteView):

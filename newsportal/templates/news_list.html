@@ -14,6 +14,8 @@ News
 
 <!--       Form button-->
        <button type="submit">Search</button>
+<!--       <button type="reset">Reset</button>-->
+
    </form>
 <hr>
 <table>
@@ -41,28 +43,32 @@ News
 <hr>
 
 <!--    Adding pagination-->
+<a href="?page=1">&laquo;&laquo;</a>    <!--move to the first page-->
+
+<!-- Pagination links with filter parameters -->
 {% if page_obj.has_previous %}
-    <a href="?page=1">1</a>
+    <a href="?{{ request.GET.urlencode }}&page={{ page_obj.previous_page_number }}">Previous</a>
     {% if page_obj.previous_page_number != 1 %}
         <a href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a>
-        {% endif %}
-   {% endif %}
+    {% endif %}
+{% endif %}
 
 <!-- Current page info -->
-   {{ page_obj.number }}
+{{ page_obj.number }}
 
 <!-- Next pages info-->
 {% if page_obj.has_next %}
-    <a href="?page={{ page_obj.next_page_number }}">{{ page_obj.next_page_number }}</a>
-       {% if paginator.num_pages != page_obj.next_page_number %}
-            <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
-            {% endif %}
-   {% endif %}
+    <a href="?{{ request.GET.urlencode }}&page={{ page_obj.next_page_number }}">Next</a>
+    {% if paginator.num_pages != page_obj.next_page_number %}
+        <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
+    {% endif %}
+{% endif %}
+<a href="?page={{ page_obj.paginator.num_pages }}">&raquo;&raquo;</a>   <!--move to the last page-->
 
 <p></p>
 
 <h2> Sumbit Your Own News </h2>
-<a href="{% url 'submit_news' %}">
+<a href="{% url 'create' %}">
     <button type="button">Submit</button>
 </a>
 
