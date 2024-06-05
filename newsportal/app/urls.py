@@ -1,5 +1,6 @@
 from django.urls import path
 from .views import NewsList, NewsDetail, NewsByCategory, create_news, NewsUpdate, NewsDelete
+from django.contrib.auth.views import LoginView, LogoutView
 
 
 urlpatterns = [
@@ -9,4 +10,6 @@ urlpatterns = [
     path('news/create/', create_news, name='create'),
     path('news/<int:pk>/edit/', NewsUpdate.as_view(), name='news_form'),
     path('news/<int:pk>/delete/', NewsDelete.as_view(), name='news_delete'),
+    path('login/', LoginView.as_view(template_name='login.html'), name='login'),
+    path('logout/', LogoutView.as_view(next_page='/login/'), name='logout'),
 ]

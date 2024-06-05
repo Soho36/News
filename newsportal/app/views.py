@@ -4,6 +4,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import News, Category
 from .filters import NewsFilter
 from .forms import NewsForm
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class NewsList(ListView):
@@ -56,7 +57,7 @@ def create_news(request):
     return render(request, 'news_form.html', {'form': form})
 
 
-class NewsUpdate(UpdateView):
+class NewsUpdate(LoginRequiredMixin, UpdateView):
     form_class = NewsForm
     model = News
     template_name = 'news_form.html'
