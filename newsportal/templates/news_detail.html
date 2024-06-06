@@ -9,4 +9,17 @@ News
 {% block content %}
 <h1>{{ news_detail.name|censor_bad_words|safe }}</h1>
 <p>{{ news_detail.description|safe }}</p>
+
+<a href="{% url 'news_form' news_detail.pk %}">
+<button type="button">Edit this news</button>
+</a>
+
+<a href="{% url 'news_delete' news_detail.pk %}">
+<button type="button">Delete this news</button>
+</a>
+
 {% endblock content %}
+
+<!--<a href="{% url 'news_form' %}">-->
+<!--    <button type="button">Edit</button>-->
+<!--</a>-->

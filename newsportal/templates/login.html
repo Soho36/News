@@ -1,0 +1,17 @@
+{% extends 'flatpages/default.html' %}
+
+{% block title %}
+Login
+{% endblock title %}
+
+{% block content %}
+<p>
+</p>
+    <form method="post" action="{% url 'login' %}">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="hidden" name="next" value="{{ next }}" />  <!--redirects back to URL user was trying to access login-->
+        <button type="submit">Login</button>
+    </form>
+
+{% endblock content %}

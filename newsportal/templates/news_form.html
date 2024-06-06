@@ -2,13 +2,23 @@
 
 {% block content %}
 
-    <h1>Submit News</h1>
-    <hr>
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Submit</button>
-    </form>
+<h1>Submit News</h1>
+<hr>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+
+{% if object.pk %}
+    <a href="{% url 'news_detail' object.pk %}">
+        <button type="button">Cancel</button>
+    </a>
+{% else %}
+    <a href="{% url 'news_list' %}">
+        <button type="button">Cancel</button>
+    </a>
+{% endif %}
 
 {% endblock content %}
 

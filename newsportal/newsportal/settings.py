@@ -133,4 +133,5 @@ STATICFILES_DIRS = [
     BASE_DIR / "static"
 ]
 
-LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/news/'  # Redirect to homepage after login
+LOGOUT_REDIRECT_URL = '/login/'  # Redirect to login page after logout

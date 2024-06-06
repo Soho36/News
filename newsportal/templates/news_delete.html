@@ -8,4 +8,9 @@
     <p>Deleting "{{ object.name }}"?</p>
     <input type="submit" value="Delete" />
 </form>
+
+<a href="{% url 'news_detail' object.pk %}">
+<button type="button">Cancel</button>
+</a>
+
 {% endblock content %}
