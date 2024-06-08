@@ -56,9 +56,9 @@
             <div class="col-lg-12 text-center">
                 <h1>Welcome,
                   {% if user.is_authenticated %}
-                    {{ user.username }}
+                    {{ user.username }}! Now you can edit news
                   {% else %}
-                    Guest
+                    Guest! (Please log in or sign up to edit news)
                   {% endif %}
                 </h1>
 
