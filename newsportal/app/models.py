@@ -1,6 +1,6 @@
 from django.db import models
-from time import time
-# from django.core.validators import MinValueValidator
+# from allauth.account.forms import SignupForm
+# from django.contrib.auth.models import Group
 
 
 class News(models.Model):
@@ -25,3 +25,4 @@ class Category(models.Model):
 
     def __str__(self):
         return self.name
+

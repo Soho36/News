@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import signup, NewsList, NewsDetail, NewsByCategory, create_news, NewsUpdate, NewsDelete
+from .views import signup, NewsList, NewsDetail, NewsByCategory, create_news, NewsUpdate, NewsDelete, get_premium, CustomLoginView
 from django.contrib.auth.views import LoginView, LogoutView
 
 
@@ -13,4 +13,7 @@ urlpatterns = [
     path('login/', LoginView.as_view(template_name='login.html'), name='login'),
     path('logout/', LogoutView.as_view(next_page='/login/'), name='logout'),
     path('signup/', signup, name='signup'),
+    path('get-premium/', get_premium, name='get_premium'),
+    path('accounts/login/', CustomLoginView.as_view(), name='account_login'),
+    path('accounts/signup/', CustomLoginView.as_view(), name='account_signup'),
 ]

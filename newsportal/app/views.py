@@ -6,24 +6,35 @@ from .filters import NewsFilter
 from .forms import NewsForm, SignUpForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth import login, authenticate
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.models import Group
+from django.contrib import messages
+from allauth.account.views import LoginView
 
 
 def signup(request):
-    if request.method == 'POST':
-        form = SignUpForm(request.POST)
-        if form.is_valid():
-            user = form.save()
-            user.refresh_from_db()  # load the profile instance created by the signal
-            user.save()
-            raw_password = form.cleaned_data.get('password1')
-            user = authenticate(username=user.username, password=raw_password)
-            login(request, user)
-            return redirect('news_list')
-        else:
-            return render(request, 'signup.html', {'form': form})  # Handle invalid form submission
+    print("User is already registered.")
+    if request.user.is_authenticated:
+
+        messages.info(request, "You are already registered.")
+        return redirect('/news')
+
     else:
-        form = SignUpForm()
-    return render(request, 'signup.html', {'form': form})
+        if request.method == 'POST':
+            form = SignUpForm(request.POST)
+            if form.is_valid():
+                user = form.save()
+                user.refresh_from_db()  # load the profile instance created by the signal
+                user.save()
+                raw_password = form.cleaned_data.get('password1')
+                user = authenticate(username=user.username, password=raw_password)
+                login(request, user)
+                return redirect('news_list')
+            else:
+                return render(request, 'signup.html', {'form': form})  # Handle invalid form submission
+        else:
+            form = SignUpForm()
+        return render(request, 'signup.html', {'form': form})
 
 
 class NewsList(ListView):
@@ -90,3 +101,26 @@ class NewsDelete(LoginRequiredMixin, DeleteView):
     template_name = 'news_delete.html'
     success_url = reverse_lazy('news_list')
     login_url = '/login/'  # URL to redirect to for login
+
+
+@login_required
+def get_premium(request):
+
+    premium_group = Group.objects.get(name='premium')
+
+    if premium_group in request.user.groups.all():
+        messages.info(request, "You are already a premium member!")
+    else:
+        request.user.groups.add(premium_group)
+        messages.success(request, "Congratulations! You are now a premium member!")
+
+    return redirect('/news')    # main page URL pattern
+
+
+class CustomLoginView(LoginView):
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            messages.info(request, "You are already signed in!")
+            return redirect('/news')
+        return super().dispatch(request, *args, **kwargs)
+
