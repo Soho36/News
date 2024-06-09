@@ -140,12 +140,13 @@ class CustomSignupView(SignupView):
 @login_required
 def subscribe_to_category(request, category_id):
     category = Category.objects.get(pk=category_id)
+    post = News.objects.get(pk=category_id)
     subscription, created = Subscription.objects.get_or_create(user=request.user, category=category)
     if created:
         messages.success(request, f'You have successfully subscribed to the {category.name} category.')
         send_mail(
             subject=f'New post in {category.name}',
-            message=f'A new post has been added to the {category.name} category.',
+            message=f'A new post has been added to the {category.name} category.{post}',
             from_email='viskey7@yandex.com',
             recipient_list=[request.user.email],
         )
