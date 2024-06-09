@@ -8,6 +8,10 @@
 {% block content %}
 <h1>News in {{ category.name }}</h1>
 <hr>
+<a href="{% url 'subscribe_to_category' category.id %}">
+    <button type="button">Subscribe to email notifications of this category!</button>
+</a>
+<hr>
 <ul>
     {% for news in news_items %}
         <li>
@@ -20,4 +24,5 @@
     {% endfor %}
 </ul>
 <hr>
+
 {% endblock content %}

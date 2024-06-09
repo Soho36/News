@@ -147,7 +147,6 @@ STATICFILES_DIRS = [
 LOGIN_REDIRECT_URL = '/news/'  # Redirect to homepage after login
 LOGOUT_REDIRECT_URL = '/login/'  # Redirect to login page after logout
 LOGIN_URL = '/accounts/login/'
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Email login functionality
 ACCOUNT_EMAIL_REQUIRED = True
@@ -156,3 +155,11 @@ ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_EMAIL_VERIFICATION = 'none'
 ACCOUNT_FORMS = {'signup': 'app.forms.BasicSignupForm'}
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_PORT = 465
+EMAIL_USE_SSL = True
+EMAIL_HOST_USER = 'viskey7@yandex.com'
+EMAIL_HOST_PASSWORD = '1n8A21v'

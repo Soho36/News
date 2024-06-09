@@ -1,7 +1,7 @@
 from django.urls import reverse_lazy
 from django.views.generic import ListView, DetailView, UpdateView, DeleteView
 from django.shortcuts import render, get_object_or_404, redirect
-from .models import News, Category
+from .models import News, Category, Subscription
 from .filters import NewsFilter
 from .forms import NewsForm, SignUpForm
 from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
@@ -10,6 +10,7 @@ from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth.models import Group
 from django.contrib import messages
 from allauth.account.views import LoginView, SignupView
+from django.core.mail import send_mail
 
 
 def signup(request):
@@ -134,3 +135,20 @@ class CustomSignupView(SignupView):
             messages.info(request, "You are already signed up!")
             return redirect('/news')  # Replace 'home' with the URL of your main page
         return super().dispatch(request, *args, **kwargs)
+
+
+@login_required
+def subscribe_to_category(request, category_id):
+    category = Category.objects.get(pk=category_id)
+    subscription, created = Subscription.objects.get_or_create(user=request.user, category=category)
+    if created:
+        messages.success(request, f'You have successfully subscribed to the {category.name} category.')
+        send_mail(
+            subject=f'New post in {category.name}',
+            message=f'A new post has been added to the {category.name} category.',
+            from_email='viskey7@yandex.com',
+            recipient_list=[request.user.email],
+        )
+    else:
+        messages.info(request, f'You are already subscribed to the {category.name} category.')
+    return redirect('news_by_category', category_name=category.name)  # Redirect to the category detail page

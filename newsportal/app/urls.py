@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import (signup, NewsList, NewsDetail, NewsByCategory, create_news, NewsUpdate, NewsDelete, get_author,
-                    CustomLoginView, CustomSignupView)
+                    CustomLoginView, CustomSignupView, subscribe_to_category)
 from django.contrib.auth.views import LoginView, LogoutView
 
 
@@ -17,4 +17,5 @@ urlpatterns = [
     path('get-author/', get_author, name='get_author'),
     path('accounts/login/', CustomLoginView.as_view(), name='account_login'),
     path('accounts/signup/', CustomSignupView.as_view(), name='account_signup'),
+    path('category/<int:category_id>/subscribe/', subscribe_to_category, name='subscribe_to_category'),
 ]

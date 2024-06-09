@@ -1,6 +1,7 @@
 from django.db import models
 # from allauth.account.forms import SignupForm
 # from django.contrib.auth.models import Group
+from django.contrib.auth.models import User
 
 
 class News(models.Model):
@@ -26,3 +27,10 @@ class Category(models.Model):
     def __str__(self):
         return self.name
 
+
+class Subscription(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    category = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+    def __str__(self):
+        return f'{self.user} subscribed to {self.category}'
