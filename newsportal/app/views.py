@@ -4,12 +4,12 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .models import News, Category
 from .filters import NewsFilter
 from .forms import NewsForm, SignUpForm
-from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
 from django.contrib.auth import login, authenticate
-from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import login_required, permission_required
 from django.contrib.auth.models import Group
 from django.contrib import messages
-from allauth.account.views import LoginView
+from allauth.account.views import LoginView, SignupView
 
 
 def signup(request):
@@ -75,6 +75,7 @@ class NewsByCategory(ListView):
         return context
 
 
+@permission_required('app.add_news', raise_exception=True)
 def create_news(request):
     if request.method == 'POST':
         form = NewsForm(request.POST)
@@ -87,7 +88,8 @@ def create_news(request):
     return render(request, 'news_form.html', {'form': form})
 
 
-class NewsUpdate(LoginRequiredMixin, UpdateView):
+class NewsUpdate(LoginRequiredMixin, PermissionRequiredMixin, UpdateView):
+    permission_required = ('app.change_news',)
     form_class = NewsForm
     model = News
     template_name = 'news_form.html'
@@ -96,7 +98,8 @@ class NewsUpdate(LoginRequiredMixin, UpdateView):
     redirect_field_name = 'next'  # Field name for redirecting back to the original page after login
 
 
-class NewsDelete(LoginRequiredMixin, DeleteView):
+class NewsDelete(LoginRequiredMixin, PermissionRequiredMixin, DeleteView):
+    permission_required = ('app.change_news',)
     model = News
     template_name = 'news_delete.html'
     success_url = reverse_lazy('news_list')
@@ -104,15 +107,15 @@ class NewsDelete(LoginRequiredMixin, DeleteView):
 
 
 @login_required
-def get_premium(request):
+def get_author(request):
 
-    premium_group = Group.objects.get(name='premium')
+    premium_group = Group.objects.get(name='authors')
 
     if premium_group in request.user.groups.all():
-        messages.info(request, "You are already a premium member!")
+        messages.info(request, "You are already an author!")
     else:
         request.user.groups.add(premium_group)
-        messages.success(request, "Congratulations! You are now a premium member!")
+        messages.success(request, "Congratulations! You are now an author!")
 
     return redirect('/news')    # main page URL pattern
 
@@ -124,3 +127,10 @@ class CustomLoginView(LoginView):
             return redirect('/news')
         return super().dispatch(request, *args, **kwargs)
 
+
+class CustomSignupView(SignupView):
+    def dispatch(self, request, *args, **kwargs):
+        if request.user.is_authenticated:
+            messages.info(request, "You are already signed up!")
+            return redirect('/news')  # Replace 'home' with the URL of your main page
+        return super().dispatch(request, *args, **kwargs)
