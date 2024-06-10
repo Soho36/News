@@ -11,6 +11,7 @@ from django.contrib.auth.models import Group
 from django.contrib import messages
 from allauth.account.views import LoginView, SignupView
 from django.core.mail import send_mail
+from bs4 import BeautifulSoup
 
 
 def signup(request):
@@ -81,7 +82,22 @@ def create_news(request):
     if request.method == 'POST':
         form = NewsForm(request.POST)
         if form.is_valid():
-            form.save()
+            new_post = form.save()      # Save the new post
+            category = new_post.category    # Get the category of the new post
+            subscriptions = Subscription.objects.filter(category=category)
+            recipient_list = [subscription.user.email for subscription in subscriptions]
+            soup = BeautifulSoup(new_post.description, 'html.parser')
+            plain_text = soup.get_text()
+            post_excerpt = ' '.join(plain_text.split()[:5]) + '...'
+
+            send_mail(
+                subject=f'New post in {category.name}',
+                message=f'A new post has been added to the {category.name} category!\n{post_excerpt}',
+                from_email='viskey7@yandex.com',
+                recipient_list=recipient_list,
+            )
+            messages.success(request, 'News post created and subscribers notified.')
+
             return redirect('/news')
     else:
         form = NewsForm
@@ -140,16 +156,11 @@ class CustomSignupView(SignupView):
 @login_required
 def subscribe_to_category(request, category_id):
     category = Category.objects.get(pk=category_id)
-    post = News.objects.get(pk=category_id)
+    # latest_post = News.objects.filter(category=category).latest('created_at')
     subscription, created = Subscription.objects.get_or_create(user=request.user, category=category)
     if created:
-        messages.success(request, f'You have successfully subscribed to the {category.name} category.')
-        send_mail(
-            subject=f'New post in {category.name}',
-            message=f'A new post has been added to the {category.name} category.{post}',
-            from_email='viskey7@yandex.com',
-            recipient_list=[request.user.email],
-        )
+        messages.success(request, f'You have successfully subscribed to the {category.name} category!')
+
     else:
         messages.info(request, f'You are already subscribed to the {category.name} category.')
     return redirect('news_by_category', category_name=category.name)  # Redirect to the category detail page
