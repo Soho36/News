@@ -1,3 +1,6 @@
-from django.test import TestCase
+def my_function(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
 
-# Create your tests here.
+
+my_function(name="Alice", age=30, city="New York")

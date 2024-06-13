@@ -1,14 +1,14 @@
 from django.db import models
-# from allauth.account.forms import SignupForm
-# from django.contrib.auth.models import Group
 from django.contrib.auth.models import User
+from django.utils import timezone
 
 
 class News(models.Model):
     name = models.CharField(max_length=150, unique=True)
     description = models.TextField()
-    published_date = models.DateTimeField(auto_now_add=True)
+    published_date = models.DateTimeField(default=timezone.now)
     category = models.ForeignKey(to='Category', on_delete=models.CASCADE, related_name='news')
+    author = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
 
     class Meta:
         verbose_name_plural = "News"

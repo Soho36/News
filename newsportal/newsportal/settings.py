@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'django_filters',
     'allauth',
     'allauth.account',
+    'django_apscheduler',
 ]
 
 SITE_ID = 1
@@ -117,8 +118,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-
-
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -165,3 +164,7 @@ EMAIL_USE_SSL = True
 EMAIL_HOST_USER = EMAIL_HOST_USER
 EMAIL_HOST_PASSWORD = EMAIL_HOST_PASSWORD
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+APSCHEDULER_DATETIME_FORMAT = "N j, Y, f:s a"
+
+APSCHEDULER_RUN_NOW_TIMEOUT = 25    # If task is not completed in this number of seconds it will be cancelled
