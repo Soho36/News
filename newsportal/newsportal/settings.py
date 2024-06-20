@@ -168,3 +168,12 @@ DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 APSCHEDULER_DATETIME_FORMAT = "N j, Y, f:s a"
 
 APSCHEDULER_RUN_NOW_TIMEOUT = 25    # If task is not completed in this number of seconds it will be cancelled
+
+# settings.py
+
+CELERY_BROKER_URL = \
+    'redis://:YeO79TVHe5vXcKQSOF843HQpwt9x0mDd@redis-17183.c281.us-east-1-2.ec2.redns.redis-cloud.com:17183/0'
+CELERY_RESULT_BACKEND = \
+    'redis://:YeO79TVHe5vXcKQSOF843HQpwt9x0mDd@redis-17183.c281.us-east-1-2.ec2.redns.redis-cloud.com:17183/0'
+
+CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True

@@ -2,6 +2,14 @@ from django.core.mail import send_mail
 from django.utils import timezone
 from datetime import timedelta
 from .models import News, Subscription
+from celery import shared_task
+import time
+
+
+@shared_task()
+def hello():
+    time.sleep(10)
+    print('Hello boy!')
 
 
 def send_weekly_newsletter():
