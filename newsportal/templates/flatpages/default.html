@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load cache %}
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -24,6 +25,7 @@
         </div>
     {% endif %}
     <!-- Responsive navbar-->
+    {% cache 900 navbar %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <div class="container">
             <a class="navbar-brand" href="{% url 'news_list' %}">NEWS FINANCE (censored)</a>
@@ -62,15 +64,18 @@
             </div>
         </div>
     </nav>
+    {% endcache %}
     <!-- Page content-->
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h1>
                 {% if user.is_authenticated %}
+                    {% cache 900 become_author_button %}
                 <a href="{% url 'get_author' %}">
                         <button type="button">Become an Author!</button>
                 </a>
+                    {% endcache %}
                     {% endif %}
                 </h1>
                 <h2>Welcome,

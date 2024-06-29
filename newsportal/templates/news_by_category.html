@@ -1,5 +1,5 @@
 {% extends 'flatpages/default.html' %}
-
+{% load cache %}
 {% load custom_filters %}
 {% block title %}
 {{ category.name }} News
@@ -8,9 +8,11 @@
 {% block content %}
 <h1>News in {{ category.name }}</h1>
 <hr>
+{% cache 900 subscribe_to_category_button %}
 <a href="{% url 'subscribe_to_category' category.id %}">
     <button type="button">Subscribe to email notifications of this category!</button>
 </a>
+{% endcache %}
 <hr>
 <ul>
     {% for news in news_items %}

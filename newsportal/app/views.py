@@ -12,7 +12,8 @@ from django.contrib.auth.models import Group
 from django.contrib import messages
 from allauth.account.views import LoginView, SignupView
 from datetime import datetime
-from bs4 import BeautifulSoup
+# from bs4 import BeautifulSoup
+# from django.views.decorators.cache import cache_page
 
 
 def signup(request):
