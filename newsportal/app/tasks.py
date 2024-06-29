@@ -3,15 +3,10 @@ from django.utils import timezone
 from datetime import timedelta
 from .models import News, Subscription
 from celery import shared_task
-import time
+from bs4 import BeautifulSoup
 
 
-@shared_task()
-def hello():
-    time.sleep(10)
-    print('Hello boy!')
-
-
+@shared_task
 def send_weekly_newsletter():
     today = timezone.now().date()
     last_week = today - timedelta(days=7)
@@ -36,3 +31,30 @@ def send_weekly_newsletter():
                 from_email='viskey7@yandex.com',
                 recipient_list=recipient_list,
             )
+
+
+@shared_task
+def send_new_post_email_task(post_id):
+    try:
+        news_post = News.objects.get(id=post_id)
+        subscriptions = Subscription.objects.filter(category=news_post.category)
+        recipient_list = [subscription.user.email for subscription in subscriptions]
+        soup = BeautifulSoup(news_post.description, 'html.parser')
+        plain_text = soup.get_text()
+        post_excerpt = ' '.join(plain_text.split()[:5]) + '...'
+        if recipient_list:
+            send_mail(
+                subject=f'New post in {news_post.category.name}',
+                message=f'A new post has been added to the {news_post.category.name} category!\n{post_excerpt}',
+                from_email='viskey7@yandex.com',
+                recipient_list=recipient_list,
+            )
+    except News.DoesNotExist:
+        print(f"News post with id {post_id} does not exist.")
+    except Exception as e:
+        print(f"Error sending email: {e}")
+
+
+@shared_task
+def debug_task():
+    print("Debug task executed")

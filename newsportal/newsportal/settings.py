@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 from config import EMAIL_HOST_PASSWORD, EMAIL_HOST_USER
+from celery.schedules import crontab
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -169,7 +170,6 @@ APSCHEDULER_DATETIME_FORMAT = "N j, Y, f:s a"
 
 APSCHEDULER_RUN_NOW_TIMEOUT = 25    # If task is not completed in this number of seconds it will be cancelled
 
-# settings.py
 
 CELERY_BROKER_URL = \
     'redis://:YeO79TVHe5vXcKQSOF843HQpwt9x0mDd@redis-17183.c281.us-east-1-2.ec2.redns.redis-cloud.com:17183/0'
@@ -177,3 +177,15 @@ CELERY_RESULT_BACKEND = \
     'redis://:YeO79TVHe5vXcKQSOF843HQpwt9x0mDd@redis-17183.c281.us-east-1-2.ec2.redns.redis-cloud.com:17183/0'
 
 CELERY_BROKER_CONNECTION_RETRY_ON_STARTUP = True
+
+
+CELERY_BEAT_SCHEDULE = {
+    'send_every_monday_8am': {
+        'task': 'app.tasks.send_weekly_newsletter',
+        'schedule': crontab(day_of_week='monday', hour='8', minute='0'),  # Every Monday at 8 AM
+    },
+    'debug-task': {
+        'task': 'app.tasks.debug_task',
+        'schedule': crontab(minute='*/1'),  # Every minute
+    },
+}
