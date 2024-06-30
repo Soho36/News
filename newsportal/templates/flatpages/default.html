@@ -71,11 +71,11 @@
             <div class="col-lg-12 text-center">
                 <h1>
                 {% if user.is_authenticated %}
-                    {% cache 900 become_author_button %}
+
                 <a href="{% url 'get_author' %}">
                         <button type="button">Become an Author!</button>
                 </a>
-                    {% endcache %}
+
                     {% endif %}
                 </h1>
                 <h2>Welcome,

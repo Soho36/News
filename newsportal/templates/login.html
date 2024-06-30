@@ -1,7 +1,6 @@
 <!--THIS HTML CAN BE USED AS CUSTOM TEMPLATE (WHEN ALLAUTH DISABLED)-->
 
 {% extends 'flatpages/default.html' %}
-{% load cache %}
 {% block title %}
 Login
 {% endblock title %}
@@ -13,9 +12,7 @@ Login
         {% csrf_token %}
         {{ form.as_p }}
         <input type="hidden" name="next" value="{{ next }}" />  <!--redirects back to URL user was trying to access login-->
-        {% cache 900 submit_button %}
         <button type="submit">Login</button>
-        {% endcache %}
     </form>
 
 {% endblock content %}

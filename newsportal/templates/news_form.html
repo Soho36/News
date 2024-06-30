@@ -1,5 +1,5 @@
 {% extends 'flatpages/default.html' %}
-{% load cache %}
+
 {% block content %}
 
 <h1>Submit News</h1>
@@ -7,23 +7,17 @@
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    {% cache 900 newsform_submit_button %}
     <button type="submit">Submit</button>
-    {% endcache %}
 </form>
 
 {% if object.pk %}
-    {% cache 900 newsform_cancel_button %}
     <a href="{% url 'news_detail' object.pk %}">
         <button type="button">Cancel</button>
     </a>
-    {% endcache %}
 {% else %}
-    {% cache 900 newsform_newslist_submit_button %}
     <a href="{% url 'news_list' %}">
         <button type="button">Cancel</button>
     </a>
-    {% endcache %}
 {% endif %}
 
 {% endblock content %}

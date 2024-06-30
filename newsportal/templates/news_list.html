@@ -1,5 +1,5 @@
 {% extends 'flatpages/default.html' %}
-{% load cache %}
+
 {% load custom_filters %}
 {% block title %}
 News
@@ -14,9 +14,9 @@ News
        {{ filterset.form.as_p }}
 
 <!--       Form button-->
-       {% cache 900 newslist_search_button %}
+
        <button type="submit">Search</button>
-       {% endcache %}
+
 <!--       <button type="reset">Reset</button>-->
 
    </form>
@@ -71,9 +71,9 @@ News
 <p></p>
 
 <h2> Sumbit Your Own News </h2>
-{% cache 900 newslist_submit_button %}
+
 <a href="{% url 'create' %}"><button type="button">Submit</button>
 </a>
-{% endcache %}
+
 
 {% endblock content %}

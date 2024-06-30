@@ -6,8 +6,12 @@ from django.views.decorators.cache import cache_page
 
 
 urlpatterns = [
-    path('news/', cache_page(60*5)(NewsList.as_view()), name='news_list'),  # General news page
-    path('news/<int:pk>/', cache_page(60*5)(NewsDetail.as_view()), name='news_detail'),  # News detail page
+    # path('news/', NewsList.as_view(), name='news_list'),  # General news page
+    # path('news/<int:pk>/', NewsDetail.as_view(), name='news_detail'),  # News detail page
+
+    path('news/', cache_page(60*1)(NewsList.as_view()), name='news_list'),  # General news page caching enabled
+    path('news/<int:pk>/', cache_page(60*1)(NewsDetail.as_view()), name='news_detail'),  # News detail page vs caching
+
     path('category/<str:category_name>/', NewsByCategory.as_view(), name='news_by_category'),  # News by category
     path('news/create/', create_news, name='create'),
     path('news/<int:pk>/edit/', NewsUpdate.as_view(), name='news_form'),

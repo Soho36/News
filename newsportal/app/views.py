@@ -14,6 +14,7 @@ from allauth.account.views import LoginView, SignupView
 from datetime import datetime
 # from bs4 import BeautifulSoup
 # from django.views.decorators.cache import cache_page
+from django.core.cache import cache
 
 
 def signup(request):
@@ -64,6 +65,24 @@ class NewsDetail(DetailView):
     template_name = 'news_detail.html'
     context_object_name = 'news_detail'
 
+    def get_object(self, *args, **kwargs):
+        obj = cache.get(f'product-{self.kwargs["pk"]}', None)
+
+        if not obj:
+            obj = super().get_object(queryset=self.queryset)
+            cache.set(f'product-{self.kwargs["pk"]}', obj)
+
+        return obj
+
+    # def get_object(self, *args, **kwargs):
+    #     obj = super().get_object(queryset=self.queryset)
+    #     print(f"Viewing news ID: {obj.pk}")  # Debugging output
+    #     return obj
+
+    # def render_to_response(self, context, **response_kwargs):
+    #     print(f"Context data: {context}")  # Debugging output
+    #     return super().render_to_response(context, **response_kwargs)
+
 
 class NewsByCategory(ListView):
     template_name = 'news_by_category.html'
@@ -90,7 +109,7 @@ def create_news(request):
         published_date__range=(start_of_day, end_of_day)
     ).count()
 
-    max_posts_per_day = 3   # Restrict users from posting news larger than this number
+    max_posts_per_day = 5   # Restrict users from posting news larger than this number
 
     if user_posts_today >= max_posts_per_day:
         messages.error(request, 'You have reached your daily limit for creating news posts.')

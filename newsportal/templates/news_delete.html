@@ -1,5 +1,5 @@
 {% extends 'flatpages/default.html' %}
-{% load cache %}
+
 {% block content %}
 <h1>Delete News</h1>
 <hr>
@@ -8,10 +8,10 @@
     <p>Deleting "{{ object.name }}"?</p>
     <input type="submit" value="Delete" />
 </form>
-{% cache 900 news_delete_cancel_button %}
+
 <a href="{% url 'news_detail' object.pk %}">
 <button type="button">Cancel</button>
 </a>
-{% endcache %}
+
 
 {% endblock content %}
