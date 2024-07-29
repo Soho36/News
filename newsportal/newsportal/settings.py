@@ -197,3 +197,73 @@ CACHES = {
         'TIMEOUT': 30,
     }
 }
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'simple': {
+            'format': '%(levelname)s %(message)s'
+        },
+        'detailed': {
+            'format': '%(asctime)s %(levelname)s %(module)s %(message)s'
+        },
+        'verbose': {
+            'format': '%(pathname)s %(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        }
+    },
+    'filters': {
+        'require_debug_true': {
+            '()': 'django.utils.log.RequireDebugTrue',
+        },
+    },
+
+    'handlers': {
+        'console': {
+            'level': 'DEBUG',
+            'filters': ['require_debug_true'],
+            'class': 'logging.StreamHandler',   # Send log messages to the console
+            'formatter': 'detailed'
+        },
+        'console_warning': {
+            'level': 'WARNING',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        },
+
+        'console_error': {
+            'level': 'ERROR',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        },
+        'console_critical': {
+            'level': 'CRITICAL',
+            'class': 'logging.StreamHandler',
+            'formatter': 'verbose'
+        },
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',     # Send log messages to a file
+            'filename': 'django.log',
+            'formatter': 'detailed'
+        },
+        'mail_admins': {
+            'level': 'ERROR',
+            'class': 'django.utils.log.AdminEmailHandler',  # Send error logs via email to the site admins
+            'formatter': 'detailed'
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['console', 'file', 'console_warning', 'console_error', 'console_critical'],  # Added file handler
+            'level': 'DEBUG',  # Ensure this level is appropriate for your needs
+            'propagate': False,
+        },
+        'django.request': {
+            'handlers': ['mail_admins'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+    }
+}
+
