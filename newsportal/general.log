@@ -28,3 +28,6 @@
 2024-07-30 15:22:33,705 CRITICAL <console> <console> this a critical message test
 2024-07-30 15:26:34,488 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py autoreload C:\Users\Liikurserv\PycharmProjects\Django_projects\newsportal\app\log_filters.py changed, reloading.
 2024-07-30 15:26:37,208 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py autoreload Watching for file changes with StatReloader
+2024-07-30 15:30:57,922 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py autoreload Watching for file changes with StatReloader
+2024-07-30 15:31:19,468 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py autoreload C:\Users\Liikurserv\PycharmProjects\Django_projects\newsportal\newsportal\settings.py changed, reloading.
+2024-07-30 15:33:11,947 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py autoreload Watching for file changes with StatReloader
