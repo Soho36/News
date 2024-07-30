@@ -1,0 +1,30 @@
+2024-07-30 13:51:59,215 INFO autoreload Watching for file changes with StatReloader
+2024-07-30 13:52:59,999 INFO autoreload C:\Users\Liikurserv\PycharmProjects\Django_projects\newsportal\newsportal\settings.py changed, reloading.
+2024-07-30 14:17:58,609 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py Watching for file changes with StatReloader
+2024-07-30 14:22:25,819 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py C:\Users\Liikurserv\PycharmProjects\Django_projects\newsportal\newsportal\settings.py changed, reloading.
+2024-07-30 14:22:27,145 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py autoreload Watching for file changes with StatReloader
+2024-07-30 14:24:09,043 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py autoreload C:\Users\Liikurserv\PycharmProjects\Django_projects\newsportal\newsportal\settings.py changed, reloading.
+2024-07-30 14:24:10,237 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py autoreload Watching for file changes with StatReloader
+2024-07-30 14:25:18,097 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py autoreload C:\Users\Liikurserv\PycharmProjects\Django_projects\newsportal\newsportal\settings.py changed, reloading.
+2024-07-30 14:25:19,422 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py autoreload Watching for file changes with StatReloader
+2024-07-30 14:32:41,281 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py autoreload C:\Users\Liikurserv\PycharmProjects\Django_projects\newsportal\newsportal\settings.py changed, reloading.
+2024-07-30 14:32:42,475 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py autoreload Watching for file changes with StatReloader
+2024-07-30 14:36:24,001 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py autoreload C:\Users\Liikurserv\PycharmProjects\Django_projects\newsportal\newsportal\settings.py changed, reloading.
+2024-07-30 14:36:25,423 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py autoreload Watching for file changes with StatReloader
+2024-07-30 14:36:57,192 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py autoreload C:\Users\Liikurserv\PycharmProjects\Django_projects\newsportal\newsportal\settings.py changed, reloading.
+2024-07-30 14:36:58,385 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py autoreload Watching for file changes with StatReloader
+2024-07-30 14:41:00,254 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py autoreload C:\Users\Liikurserv\PycharmProjects\Django_projects\newsportal\newsportal\settings.py changed, reloading.
+2024-07-30 14:41:01,650 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py autoreload Watching for file changes with StatReloader
+2024-07-30 14:48:23,169 ERROR <console> <console> 545454
+2024-07-30 15:02:36,894 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py autoreload C:\Users\Liikurserv\PycharmProjects\Django_projects\newsportal\newsportal\settings.py changed, reloading.
+2024-07-30 15:02:38,291 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py autoreload Watching for file changes with StatReloader
+2024-07-30 15:04:13,034 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py autoreload C:\Users\Liikurserv\PycharmProjects\Django_projects\newsportal\newsportal\settings.py changed, reloading.
+2024-07-30 15:04:14,336 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py autoreload Watching for file changes with StatReloader
+2024-07-30 15:05:04,541 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py autoreload C:\Users\Liikurserv\PycharmProjects\Django_projects\newsportal\newsportal\settings.py changed, reloading.
+2024-07-30 15:14:42,181 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py autoreload Watching for file changes with StatReloader
+2024-07-30 15:16:21,108 ERROR <console> <console> this is a test error
+2024-07-30 15:19:15,914 INFO <console> <console> this a info message
+2024-07-30 15:21:32,415 WARNING <console> <console> this a test warning message
+2024-07-30 15:22:33,705 CRITICAL <console> <console> this a critical message test
+2024-07-30 15:26:34,488 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py autoreload C:\Users\Liikurserv\PycharmProjects\Django_projects\newsportal\app\log_filters.py changed, reloading.
+2024-07-30 15:26:37,208 INFO C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\autoreload.py autoreload Watching for file changes with StatReloader

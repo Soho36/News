@@ -26,9 +26,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-k#e&i=fq7o95xk_910=q^jjk5eg&x)s&)w&*xz1f!absf@xiy='
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['http://127.0.0.1:8000/']
 
 
 # Application definition
@@ -203,18 +203,39 @@ LOGGING = {
     'disable_existing_loggers': False,
     'formatters': {
         'simple': {
-            'format': '%(levelname)s %(message)s'
+            'format': '%(asctime)s '
+                      '%(levelname)s '
+                      '%(message)s'
         },
         'detailed': {
-            'format': '%(asctime)s %(levelname)s %(module)s %(message)s'
+            'format': '%(asctime)s '
+                      '%(levelname)s '
+                      '%(pathname)s '
+                      '%(module)s '
+                      '%(message)s'
         },
-        'verbose': {
-            'format': '%(pathname)s %(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+
+        'error_critical': {
+            'format': '%(asctime)s '
+                      '%(levelname)s '
+                      '%(pathname)s '
+                      '%(message)s '
+                      '%(exc_info)s'
+        },
+        'error_email': {
+            'format': '%(asctime)s '
+                      '%(levelname)s '
+                      '%(pathname)s '
+                      '%(message)s '
         }
     },
     'filters': {
         'require_debug_true': {
             '()': 'django.utils.log.RequireDebugTrue',
+        },
+
+        'require_debug_false': {
+            '()': 'app.log_filters.RequireDebugFalse',  # Add the custom filter from log_filters.py
         },
     },
 
@@ -223,44 +244,78 @@ LOGGING = {
             'level': 'DEBUG',
             'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',   # Send log messages to the console
-            'formatter': 'detailed'
+            'formatter': 'simple'
         },
         'console_warning': {
+            'filters': ['require_debug_true'],
             'level': 'WARNING',
             'class': 'logging.StreamHandler',
-            'formatter': 'verbose'
+            'formatter': 'detailed'
         },
 
         'console_error': {
+            'filters': ['require_debug_true'],
             'level': 'ERROR',
             'class': 'logging.StreamHandler',
-            'formatter': 'verbose'
+            'formatter': 'error_critical'
         },
-        'console_critical': {
-            'level': 'CRITICAL',
-            'class': 'logging.StreamHandler',
-            'formatter': 'verbose'
-        },
-        'file': {
+
+        'file_general': {
+            'filters': ['require_debug_false'],
             'level': 'INFO',
             'class': 'logging.FileHandler',     # Send log messages to a file
-            'filename': 'django.log',
+            'filename': 'general.log',
             'formatter': 'detailed'
         },
+        'file_errors': {
+            'level': 'ERROR',
+            'class': 'logging.FileHandler',     # Send log messages to a file
+            'filename': 'errors.log',
+            'formatter': 'error_critical'
+        },
+
+        'file_security': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',     # Send log messages to a file
+            'filename': 'security.log',
+            'formatter': 'detailed'
+        },
+
         'mail_admins': {
+            'filters': ['require_debug_false'],
             'level': 'ERROR',
             'class': 'django.utils.log.AdminEmailHandler',  # Send error logs via email to the site admins
-            'formatter': 'detailed'
+            'formatter': 'error_email'
         },
     },
     'loggers': {
         'django': {
-            'handlers': ['console', 'file', 'console_warning', 'console_error', 'console_critical'],  # Added file handler
-            'level': 'DEBUG',  # Ensure this level is appropriate for your needs
+            'handlers': ['console', 'console_warning', 'console_error', 'file_general'],  # Added file handler
+            'level': 'DEBUG',
             'propagate': False,
         },
         'django.request': {
-            'handlers': ['mail_admins'],
+            'handlers': ['mail_admins', 'file_general', 'file_errors'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django.server': {
+            'handlers': ['mail_admins', 'file_general', 'file_errors'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django.template': {
+            'handlers': ['file_general', 'file_errors'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django.db.backends': {
+            'handlers': ['file_general', 'file_errors'],
+            'level': 'ERROR',
+            'propagate': False,
+        },
+        'django.security': {
+            'handlers': ['file_security'],
             'level': 'ERROR',
             'propagate': False,
         },
