@@ -2,6 +2,8 @@ from django.db import models
 from django.contrib.auth.models import User
 from django.utils import timezone
 from django.core.cache import cache
+from django.utils.translation import gettext as _
+from django.utils.translation import pgettext_lazy
 
 
 class News(models.Model):
@@ -12,7 +14,7 @@ class News(models.Model):
     author = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
 
     class Meta:
-        verbose_name_plural = "News"
+        verbose_name_plural = _("News")
 
     def __str__(self):
         return f'{self.name}: {self.description[:20]}'
@@ -28,10 +30,10 @@ class News(models.Model):
 
 class Category(models.Model):
 
-    name = models.CharField(max_length=100, unique=True)
+    name = models.CharField(max_length=100, unique=True, help_text=_('category name'))
 
     class Meta:
-        verbose_name_plural = "Categories"
+        verbose_name_plural = _("Categories")
 
     def __str__(self):
         return self.name
@@ -40,6 +42,9 @@ class Category(models.Model):
 class Subscription(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     category = models.ForeignKey(Category, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name_plural = _("Subscriptions")
 
     def __str__(self):
         return f'{self.user} subscribed to {self.category}'

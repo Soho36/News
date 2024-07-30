@@ -1,6 +1,6 @@
 from django.utils import timezone
 from django.urls import reverse_lazy
-from django.views.generic import ListView, DetailView, UpdateView, DeleteView
+from django.views.generic import ListView, DetailView, UpdateView, DeleteView, View
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import News, Category, Subscription
 from .filters import NewsFilter
@@ -12,9 +12,9 @@ from django.contrib.auth.models import Group
 from django.contrib import messages
 from allauth.account.views import LoginView, SignupView
 from datetime import datetime
-# from bs4 import BeautifulSoup
-# from django.views.decorators.cache import cache_page
 from django.core.cache import cache
+from django.utils.translation import gettext as _
+from django.http import HttpResponse
 
 
 def signup(request):
@@ -188,3 +188,10 @@ def subscribe_to_category(request, category_id):
     else:
         messages.info(request, f'You are already subscribed to the {category.name} category.')
     return redirect('news_by_category', category_name=category.name)  # Redirect to the category detail page
+
+
+class Index(View):
+    def get(self, request):
+        string = _('Hello world')
+
+        return HttpResponse(string)
