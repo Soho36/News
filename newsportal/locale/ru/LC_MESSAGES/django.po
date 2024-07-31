@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-31 00:12+0300\n"
+"POT-Creation-Date: 2024-07-31 14:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,8 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\app\models.py:17
+#: .\app\models.py:17 .\templates\news_detail.html:6
+#: .\templates\news_list.html:6
 msgid "News"
 msgstr "Новости"
 
@@ -43,3 +44,152 @@ msgstr "Привет Мир"
 #: .\fpages\admin.py:11
 msgid "Advanced options"
 msgstr "Расширенные опции"
+
+#: .\templates\flatpages\default.html:20
+msgid "Check out my new cool translation"
+msgstr "Зацени мой крутой перевод!"
+
+#: .\templates\flatpages\default.html:34
+msgid "NEWS FINANCE (censored)"
+msgstr "НОВОСТИ ФИНАНСОВ(цензура)"
+
+#: .\templates\flatpages\default.html:44
+msgid "Stock Market"
+msgstr "Рынок акций"
+
+#: .\templates\flatpages\default.html:47
+msgid "Economics"
+msgstr "Экономика"
+
+#: .\templates\flatpages\default.html:50
+msgid "Housing"
+msgstr "Недвижимость"
+
+#: .\templates\flatpages\default.html:56
+msgid "Sign UP"
+msgstr "Регистрация"
+
+#: .\templates\flatpages\default.html:59 .\templates\login.html:16
+msgid "Login"
+msgstr "Логин"
+
+#: .\templates\flatpages\default.html:62
+msgid "Logout"
+msgstr "Выход"
+
+#: .\templates\flatpages\default.html:79
+msgid "Become an Author!"
+msgstr "Стань автором"
+
+#: .\templates\flatpages\default.html:84
+msgid "Welcome,"
+msgstr "Добро пожаловать,"
+
+#: .\templates\flatpages\default.html:86
+msgid "Now you can edit news,"
+msgstr "Теперь вы можете редактировать новости,"
+
+#: .\templates\flatpages\default.html:89
+msgid "Guest!"
+msgstr "Гость!"
+
+#: .\templates\flatpages\default.html:89
+msgid "(Please log in or sign up to edit news)"
+msgstr ""
+"(Пожалуйста, войдите или зарегистрируйтесь, для того, чтобы редактровать "
+"новости)"
+
+#: .\templates\news_by_category.html:9
+msgid "News in"
+msgstr "Новости"
+
+#: .\templates\news_by_category.html:13
+msgid "Subscribe to email notifications of this category!"
+msgstr "Подписаться на уведомления этой категории"
+
+#: .\templates\news_by_category.html:22 .\templates\news_list.html:29
+msgid "Published on:"
+msgstr "Опубликовано>"
+
+#: .\templates\news_by_category.html:25
+msgid "No news in this category."
+msgstr "В этой категории нет новостей."
+
+#: .\templates\news_delete.html:4
+msgid "Delete News"
+msgstr "Удалить новость"
+
+#: .\templates\news_delete.html:8
+msgid "Deleting"
+msgstr "Удаляю"
+
+#: .\templates\news_delete.html:13 .\templates\news_detail.html:27
+#: .\templates\news_form.html:15 .\templates\news_form.html:19
+msgid "Cancel"
+msgstr "Отмена"
+
+#: .\templates\news_detail.html:14
+msgid "Edit this news"
+msgstr "Изменить эту новость"
+
+#: .\templates\news_detail.html:16
+msgid "Current news ID:"
+msgstr "ИН текущей новости"
+
+#: .\templates\news_detail.html:21
+msgid "Delete this news"
+msgstr "Удалить новость"
+
+#: .\templates\news_form.html:5
+msgid "Submit News"
+msgstr "Загрузить новость"
+
+#: .\templates\news_form.html:10 .\templates\news_list.html:75
+msgid "Submit"
+msgstr "Загрузить"
+
+#: .\templates\news_list.html:10
+msgid "All news"
+msgstr "Все новости"
+
+#: .\templates\news_list.html:18
+msgid "Search"
+msgstr "Искать"
+
+#: .\templates\news_list.html:26
+msgid "Name"
+msgstr "Название"
+
+#: .\templates\news_list.html:27
+msgid "Description"
+msgstr "Описание"
+
+#: .\templates\news_list.html:28
+msgid "Category"
+msgstr "Категории"
+
+#: .\templates\news_list.html:53
+msgid "Previous"
+msgstr "Назад"
+
+#: .\templates\news_list.html:64
+msgid "Next"
+msgstr "Вперед"
+
+#: .\templates\news_list.html:73
+msgid "Sumbit Your Own News"
+msgstr "Загрузи свою собственную новость"
+
+#: .\templates\signup.html:5 .\templates\signup.html:14
+#, fuzzy
+#| msgid "Sign UP"
+msgid "Sign Up"
+msgstr "Регистрация"
+
+#: .\templates\signup.html:16
+msgid "Already have an account?"
+msgstr "Уже есть аккаунт?"
+
+#: .\templates\signup.html:16
+msgid "Log In"
+msgstr "Войти"

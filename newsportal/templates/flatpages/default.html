@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load cache %}
+{% load i18n %}
 <html lang="en">
     <head>
         <meta charset="utf-8" />
@@ -14,7 +15,9 @@
     </head>
 
 <body>
+    {{ string }}
 <!-- Display messages -->
+    {% trans "Check out my new cool translation" %}! <!-- Переводим строку -->
     {% if messages %}
         <div class="messages">
             {% for message in messages %}
@@ -28,7 +31,7 @@
     {% cache 900 navbar %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <div class="container">
-            <a class="navbar-brand" href="{% url 'news_list' %}">NEWS FINANCE (censored)</a>
+            <a class="navbar-brand" href="{% url 'news_list' %}">{% trans "NEWS FINANCE (censored)" %}</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse"
                     data-target="#navbarResponsive"
                     aria-controls="navbarResponsive" aria-expanded="false"
@@ -38,25 +41,25 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'news_by_category' category_name='Stock Market' %}">Stock Market</a>
+                        <a class="nav-link" href="{% url 'news_by_category' category_name='Stock Market' %}">{% trans "Stock Market" %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'news_by_category' category_name='Economics' %}">Economics</a>
+                        <a class="nav-link" href="{% url 'news_by_category' category_name='Economics' %}">{% trans "Economics" %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'news_by_category' category_name='Housing' %}">Housing</a>
+                        <a class="nav-link" href="{% url 'news_by_category' category_name='Housing' %}">{% trans "Housing" %}</a>
                     </li>
 
 <!--                        USER AUTHENTICATION SECTION-->
 
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_signup' %}">Sign UP</a>
+                        <a class="nav-link" href="{% url 'account_signup' %}">{% trans "Sign UP" %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_login' %}">Login</a>
+                        <a class="nav-link" href="{% url 'account_login' %}">{% trans "Login" %}</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{% url 'account_logout' %}">Logout</a>
+                        <a class="nav-link" href="{% url 'account_logout' %}">{% trans "Logout" %}</a>
                     </li>
 
 
@@ -73,17 +76,17 @@
                 {% if user.is_authenticated %}
 
                 <a href="{% url 'get_author' %}">
-                        <button type="button">Become an Author!</button>
+                        <button type="button">{% trans "Become an Author!" %}</button>
                 </a>
 
                     {% endif %}
                 </h1>
-                <h2>Welcome,
+                <h2>{% trans "Welcome," %}
                   {% if user.is_authenticated %}
-                    <span style="color: green;">{{ user.username }}</span>! Now you can edit news
+                    <span style="color: green;">{{ user.username }}</span>! {% trans "Now you can edit news," %}
 
                   {% else %}
-                    <span style="color: red;">Guest! </span> (Please log in or sign up to edit news)
+                    <span style="color: red;">{% trans "Guest!" %} </span> {% trans "(Please log in or sign up to edit news)" %}
                   {% endif %}
                 </h2>
 
