@@ -11,7 +11,8 @@ urlpatterns = [
 
     path('news/', cache_page(60*1)(NewsList.as_view()), name='news_list'),  # General news page caching enabled
     path('news/<int:pk>/', cache_page(60*1)(NewsDetail.as_view()), name='news_detail'),  # News detail page vs caching
-    path('category/<str:category_name>/', NewsByCategory.as_view(), name='news_by_category'),  # News by category
+    # path('category/<slug:category_slug>/', NewsByCategory.as_view(), name='news_by_category'),  # News by category
+    path('category/<str:category_name>/', NewsByCategory.as_view(), name='news_by_category'),
     path('news/create/', create_news, name='create'),
     path('news/<int:pk>/edit/', NewsUpdate.as_view(), name='news_form'),
     path('news/<int:pk>/delete/', NewsDelete.as_view(), name='news_delete'),

@@ -74,26 +74,19 @@ class NewsDetail(DetailView):
 
         return obj
 
-    # def get_object(self, *args, **kwargs):
-    #     obj = super().get_object(queryset=self.queryset)
-    #     print(f"Viewing news ID: {obj.pk}")  # Debugging output
-    #     return obj
-
-    # def render_to_response(self, context, **response_kwargs):
-    #     print(f"Context data: {context}")  # Debugging output
-    #     return super().render_to_response(context, **response_kwargs)
-
 
 class NewsByCategory(ListView):
     template_name = 'news_by_category.html'
     context_object_name = 'news_items'
 
     def get_queryset(self):
+        # Retrieve the category by slug instead of name
         self.category = get_object_or_404(Category, name=self.kwargs['category_name'])
         return News.objects.filter(category=self.category)
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        # Pass the category object to the context
         context['category'] = self.category
         return context
 
@@ -192,6 +185,18 @@ def subscribe_to_category(request, category_id):
 
 class Index(View):
     def get(self, request):
-        string = _('Hello world')
+        string = _('Hello world! This is the index page!')
 
         return HttpResponse(string)
+
+
+# class Index(View):
+#     def get(self, request):
+#         # . Translators: This message appears on the home page only
+#         models = News.objects.all()
+#
+#         context = {
+#             'models': models,
+#         }
+#
+#         return HttpResponse(render(request, 'default.html', context))

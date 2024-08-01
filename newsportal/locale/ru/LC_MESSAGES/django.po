@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-31 14:32+0300\n"
+"POT-Creation-Date: 2024-08-01 23:43+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,6 +19,22 @@ msgstr ""
 "Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: .\app\filters.py:11
+msgid "Post name contains"
+msgstr "Имя новости содержит"
+
+#: .\app\filters.py:16
+msgid "Category name contains"
+msgstr "Название категории содержит"
+
+#: .\app\filters.py:21
+msgid "Description contains"
+msgstr "Описание содержит"
+
+#: .\app\filters.py:28
+msgid "Published date greater than or equal to"
+msgstr "Дата публикации больше или равна"
 
 #: .\app\models.py:17 .\templates\news_detail.html:6
 #: .\templates\news_list.html:6
@@ -37,63 +53,63 @@ msgstr "Категории"
 msgid "Subscriptions"
 msgstr "Подписки"
 
-#: .\app\views.py:195
-msgid "Hello world"
-msgstr "Привет Мир"
+#: .\app\views.py:188
+msgid "Hello world! This is the index page!"
+msgstr "Привет мир! Это индексная страница"
 
 #: .\fpages\admin.py:11
 msgid "Advanced options"
 msgstr "Расширенные опции"
 
-#: .\templates\flatpages\default.html:20
+#: .\templates\flatpages\default.html:36
 msgid "Check out my new cool translation"
 msgstr "Зацени мой крутой перевод!"
 
-#: .\templates\flatpages\default.html:34
+#: .\templates\flatpages\default.html:50
 msgid "NEWS FINANCE (censored)"
 msgstr "НОВОСТИ ФИНАНСОВ(цензура)"
 
-#: .\templates\flatpages\default.html:44
+#: .\templates\flatpages\default.html:60
 msgid "Stock Market"
 msgstr "Рынок акций"
 
-#: .\templates\flatpages\default.html:47
+#: .\templates\flatpages\default.html:63
 msgid "Economics"
 msgstr "Экономика"
 
-#: .\templates\flatpages\default.html:50
+#: .\templates\flatpages\default.html:66
 msgid "Housing"
 msgstr "Недвижимость"
 
-#: .\templates\flatpages\default.html:56
+#: .\templates\flatpages\default.html:72
 msgid "Sign UP"
 msgstr "Регистрация"
 
-#: .\templates\flatpages\default.html:59 .\templates\login.html:16
+#: .\templates\flatpages\default.html:75 .\templates\login.html:16
 msgid "Login"
 msgstr "Логин"
 
-#: .\templates\flatpages\default.html:62
+#: .\templates\flatpages\default.html:78
 msgid "Logout"
 msgstr "Выход"
 
-#: .\templates\flatpages\default.html:79
+#: .\templates\flatpages\default.html:95
 msgid "Become an Author!"
 msgstr "Стань автором"
 
-#: .\templates\flatpages\default.html:84
+#: .\templates\flatpages\default.html:100
 msgid "Welcome,"
 msgstr "Добро пожаловать,"
 
-#: .\templates\flatpages\default.html:86
+#: .\templates\flatpages\default.html:102
 msgid "Now you can edit news,"
 msgstr "Теперь вы можете редактировать новости,"
 
-#: .\templates\flatpages\default.html:89
+#: .\templates\flatpages\default.html:105
 msgid "Guest!"
 msgstr "Гость!"
 
-#: .\templates\flatpages\default.html:89
+#: .\templates\flatpages\default.html:105
 msgid "(Please log in or sign up to edit news)"
 msgstr ""
 "(Пожалуйста, войдите или зарегистрируйтесь, для того, чтобы редактровать "
@@ -181,8 +197,6 @@ msgid "Sumbit Your Own News"
 msgstr "Загрузи свою собственную новость"
 
 #: .\templates\signup.html:5 .\templates\signup.html:14
-#, fuzzy
-#| msgid "Sign UP"
 msgid "Sign Up"
 msgstr "Регистрация"
 
@@ -193,3 +207,6 @@ msgstr "Уже есть аккаунт?"
 #: .\templates\signup.html:16
 msgid "Log In"
 msgstr "Войти"
+
+#~ msgid "Hello world"
+#~ msgstr "Привет Мир"

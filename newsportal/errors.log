@@ -1,0 +1,396 @@
+2024-07-31 23:38:38,548 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\log.py Internal Server Error: / (<class 'django.template.exceptions.TemplateDoesNotExist'>, TemplateDoesNotExist('index.html'), <traceback object at 0x05060868>)
+Traceback (most recent call last):
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\newsportal\app\views.py", line 201, in get
+    return HttpResponse(render(request, 'index.html', context))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: index.html
+2024-07-31 23:38:38,550 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\servers\basehttp.py "GET / HTTP/1.1" 500 100148 None
+2024-07-31 23:39:18,218 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\log.py Internal Server Error: / (<class 'django.template.exceptions.TemplateDoesNotExist'>, TemplateDoesNotExist('index.html'), <traceback object at 0x049367C8>)
+Traceback (most recent call last):
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\newsportal\app\views.py", line 201, in get
+    return HttpResponse(render(request, 'index.html', context))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: index.html
+2024-07-31 23:39:18,219 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\servers\basehttp.py "GET / HTTP/1.1" 500 100148 None
+2024-07-31 23:39:36,047 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\log.py Internal Server Error: / (<class 'django.template.exceptions.TemplateDoesNotExist'>, TemplateDoesNotExist('index.html'), <traceback object at 0x04369B68>)
+Traceback (most recent call last):
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\newsportal\app\views.py", line 201, in get
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: index.html
+2024-07-31 23:39:36,049 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\servers\basehttp.py "GET / HTTP/1.1" 500 99179 None
+2024-07-31 23:40:57,707 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\log.py Internal Server Error: / (<class 'django.template.exceptions.TemplateDoesNotExist'>, TemplateDoesNotExist('index.html'), <traceback object at 0x04FF68C8>)
+Traceback (most recent call last):
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\newsportal\app\views.py", line 209, in get
+    return HttpResponse(render(request, 'index.html', context))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: index.html
+2024-07-31 23:40:57,709 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\servers\basehttp.py "GET / HTTP/1.1" 500 100280 None
+2024-07-31 23:42:30,260 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\log.py Internal Server Error: / (<class 'django.template.exceptions.TemplateDoesNotExist'>, TemplateDoesNotExist('default.html'), <traceback object at 0x05BF0CA8>)
+Traceback (most recent call last):
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\newsportal\app\views.py", line 209, in get
+    return HttpResponse(render(request, 'default.html', context))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: default.html
+2024-07-31 23:42:30,262 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\servers\basehttp.py "GET / HTTP/1.1" 500 100324 None
+2024-07-31 23:42:32,599 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\log.py Internal Server Error: / (<class 'django.template.exceptions.TemplateDoesNotExist'>, TemplateDoesNotExist('default.html'), <traceback object at 0x05AF5508>)
+Traceback (most recent call last):
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\newsportal\app\views.py", line 209, in get
+    return HttpResponse(render(request, 'default.html', context))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: default.html
+2024-07-31 23:42:32,600 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\servers\basehttp.py "GET / HTTP/1.1" 500 100324 None
+2024-07-31 23:42:33,465 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\log.py Internal Server Error: / (<class 'django.template.exceptions.TemplateDoesNotExist'>, TemplateDoesNotExist('default.html'), <traceback object at 0x05AE61A8>)
+Traceback (most recent call last):
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\newsportal\app\views.py", line 209, in get
+    return HttpResponse(render(request, 'default.html', context))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\shortcuts.py", line 24, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\loader.py", line 19, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: default.html
+2024-07-31 23:42:33,466 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\servers\basehttp.py "GET / HTTP/1.1" 500 100324 None
+2024-08-01 19:33:01,873 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\log.py Internal Server Error: /news/ (<class 'AttributeError'>, AttributeError("'NewsList' object has no attribute 'category'"), <traceback object at 0x05809608>)
+Traceback (most recent call last):
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\newsportal\app\views.py", line 60, in get_context_data
+    context['category'] = self.category
+AttributeError: 'NewsList' object has no attribute 'category'
+2024-08-01 19:33:01,876 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\servers\basehttp.py "GET /news/ HTTP/1.1" 500 88859 None
+2024-08-01 19:33:54,369 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\log.py Internal Server Error: /news/ (<class 'KeyError'>, KeyError('category_name'), <traceback object at 0x058E46A8>)
+Traceback (most recent call last):
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\newsportal\app\views.py", line 60, in get_context_data
+    context['category_name'] = self.kwargs['category_name']
+KeyError: 'category_name'
+2024-08-01 19:33:54,371 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\servers\basehttp.py "GET /news/ HTTP/1.1" 500 88520 None
+2024-08-01 19:34:09,242 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\log.py Internal Server Error: /news/ (<class 'KeyError'>, KeyError('category_name'), <traceback object at 0x057A3828>)
+Traceback (most recent call last):
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\newsportal\app\views.py", line 60, in get_context_data
+    return context
+KeyError: 'category_name'
+2024-08-01 19:34:09,244 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\servers\basehttp.py "GET /news/ HTTP/1.1" 500 88562 None
+2024-08-01 22:13:42,986 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\log.py Internal Server Error: /news/ (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'news_by_category' with keyword arguments '{'category_name': 'Stock Market'}' not found. 1 pattern(s) tried: ['category/(?P<category_slug>[-a-zA-Z0-9_]+)/\\\\Z']"), <traceback object at 0x04F84CE8>)
+Traceback (most recent call last):
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\templatetags\cache.py", line 53, in render
+    value = self.nodelist.render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'news_by_category' with keyword arguments '{'category_name': 'Stock Market'}' not found. 1 pattern(s) tried: ['category/(?P<category_slug>[-a-zA-Z0-9_]+)/\\Z']
+2024-08-01 22:13:42,989 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\servers\basehttp.py "GET /news/ HTTP/1.1" 500 216814 None
+2024-08-01 22:19:33,690 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\log.py Internal Server Error: /news/ (<class 'django.db.utils.OperationalError'>, OperationalError('no such column: app_category.slug'), <traceback object at 0x05512088>)
+Traceback (most recent call last):
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 880, in _resolve_lookup
+    current = current[bit]
+TypeError: 'News' object is not subscriptable
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\fields\related_descriptors.py", line 218, in __get__
+    rel_obj = self.field.get_cached_value(instance)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\fields\mixins.py", line 15, in get_cached_value
+    return instance._state.fields_cache[cache_name]
+KeyError: 'category'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+sqlite3.OperationalError: no such column: app_category.slug
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\loader_tags.py", line 63, in render
+    result = block.nodelist.render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\defaulttags.py", line 238, in render
+    nodelist.append(node.render_annotated(context))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 1064, in render
+    output = self.filter_expression.resolve(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 715, in resolve
+    obj = self.var.resolve(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 847, in resolve
+    value = self._resolve_lookup(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 890, in _resolve_lookup
+    current = getattr(current, bit)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\fields\related_descriptors.py", line 236, in __get__
+    rel_obj = self.get_object(instance)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\fields\related_descriptors.py", line 199, in get_object
+    return qs.get(self.field.get_reverse_related_filter(instance))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\query.py", line 633, in get
+    num = len(clone)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\query.py", line 380, in __len__
+    self._fetch_all()
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\query.py", line 1881, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\sql\compiler.py", line 1562, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\backends\utils.py", line 102, in execute
+    return super().execute(sql, params)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\backends\utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\backends\utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\backends\utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\backends\sqlite3\base.py", line 328, in execute
+    return super().execute(query, params)
+django.db.utils.OperationalError: no such column: app_category.slug
+2024-08-01 22:19:33,695 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\servers\basehttp.py "GET /news/ HTTP/1.1" 500 332123 None
+2024-08-01 22:24:22,044 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\log.py Internal Server Error: /news/ (<class 'django.urls.exceptions.NoReverseMatch'>, NoReverseMatch("Reverse for 'news_by_category' with keyword arguments '{'category_name': 'Stock Market'}' not found. 1 pattern(s) tried: ['category/(?P<category_slug>[-a-zA-Z0-9_]+)/\\\\Z']"), <traceback object at 0x051B1A48>)
+Traceback (most recent call last):
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\loader_tags.py", line 157, in render
+    return compiled_parent._render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\templatetags\cache.py", line 53, in render
+    value = self.nodelist.render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\defaulttags.py", line 471, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\urls\base.py", line 88, in reverse
+    return resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\urls\resolvers.py", line 828, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'news_by_category' with keyword arguments '{'category_name': 'Stock Market'}' not found. 1 pattern(s) tried: ['category/(?P<category_slug>[-a-zA-Z0-9_]+)/\\Z']
+2024-08-01 22:24:22,048 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\servers\basehttp.py "GET /news/ HTTP/1.1" 500 216951 None

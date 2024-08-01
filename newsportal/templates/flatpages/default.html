@@ -31,6 +31,7 @@
         <input type="submit" value="set">
     </form>
     {{ string }}
+
 <!-- Display messages -->
     {% trans "Check out my new cool translation" %}! <!-- Переводим строку -->
     {% if messages %}
@@ -43,7 +44,7 @@
         </div>
     {% endif %}
     <!-- Responsive navbar-->
-    {% cache 900 navbar %}
+    {% cache 600 navbar request.LANGUAGE_CODE %}
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark static-top">
         <div class="container">
             <a class="navbar-brand" href="{% url 'news_list' %}">{% trans "NEWS FINANCE (censored)" %}</a>
