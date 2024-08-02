@@ -1,6 +1,7 @@
 <!--THIS HTML CAN BE USED AS CUSTOM TEMPLATE (WHEN ALLAUTH DISABLED)-->
 
 {% extends 'flatpages/default.html' %}
+{% load i18n %}
 {% block title %}
 Login
 {% endblock title %}
@@ -12,7 +13,7 @@ Login
         {% csrf_token %}
         {{ form.as_p }}
         <input type="hidden" name="next" value="{{ next }}" />  <!--redirects back to URL user was trying to access login-->
-        <button type="submit">Login</button>
+        <button type="submit">{% trans "Login" %}</button>
     </form>
 
 {% endblock content %}

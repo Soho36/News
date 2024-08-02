@@ -1,22 +1,22 @@
 {% extends 'flatpages/default.html' %}
-
+{% load i18n %}
 {% block content %}
 
-<h1>Submit News</h1>
+<h1>{% trans "Submit News" %}</h1>
 <hr>
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Submit</button>
+    <button type="submit">{% trans "Submit" %}</button>
 </form>
 
 {% if object.pk %}
     <a href="{% url 'news_detail' object.pk %}">
-        <button type="button">Cancel</button>
+        <button type="button">{% trans "Cancel" %}</button>
     </a>
 {% else %}
     <a href="{% url 'news_list' %}">
-        <button type="button">Cancel</button>
+        <button type="button">{% trans "Cancel" %}</button>
     </a>
 {% endif %}
 

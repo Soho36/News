@@ -1,6 +1,7 @@
 from django import template
-
+from django.utils import translation
 register = template.Library()
+
 
 BAD_WORDS = {
     'fuck': 'f**k',
@@ -20,3 +21,4 @@ def censor_bad_words(value):
     words = value.split()
     censored_words = [BAD_WORDS.get(word, word) for word in words]
     return ' '.join(censored_words)
+

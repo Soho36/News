@@ -1,13 +1,13 @@
 {% extends 'flatpages/default.html' %}
-
+{% load i18n %}
 {% load custom_filters %}
 {% block title %}
-News
 
+{% trans "News" %}
 {% endblock title %}
 
 {% block content %}
-<h1>All news</h1>
+<h1>{% trans "All news" %}</h1>
 
 <!--Add form-->
    <form method="get">
@@ -15,18 +15,21 @@ News
 
 <!--       Form button-->
 
-       <button type="submit">Search</button>
+       <button type="submit">{% trans "Search" %}</button>
 
-<!--       <button type="reset">Reset</button>-->
+       <a href="{% url 'news_list' %}">
+           <button type="button">{% trans "Reset Search" %}</button>
+       </a>
 
    </form>
+
 <hr>
 <table>
        <tr>
-           <td><strong>Name</strong></td>
-           <td><strong>Description</strong></td>
-           <td><strong>Category</strong></td>
-           <td><strong>Published on:</strong></td>
+           <td><strong>{% trans "Name" %}</strong></td>
+           <td><strong>{% trans "Description" %}</strong></td>
+           <td><strong>{% trans "Category" %}</strong></td>
+           <td><strong>{% trans "Published on:" %}</strong></td>
        </tr>
 
 <!--    Beginning of the loop. For each news new line will be generated -->
@@ -50,7 +53,7 @@ News
 
 <!-- Pagination links with filter parameters -->
 {% if page_obj.has_previous %}
-    <a href="?{{ request.GET.urlencode }}&page={{ page_obj.previous_page_number }}">Previous</a>
+    <a href="?{{ request.GET.urlencode }}&page={{ page_obj.previous_page_number }}">{% trans "Previous" %}</a>
     {% if page_obj.previous_page_number != 1 %}
         <a href="?page={{ page_obj.previous_page_number }}">{{ page_obj.previous_page_number }}</a>
     {% endif %}
@@ -61,7 +64,7 @@ News
 
 <!-- Next pages info-->
 {% if page_obj.has_next %}
-    <a href="?{{ request.GET.urlencode }}&page={{ page_obj.next_page_number }}">Next</a>
+    <a href="?{{ request.GET.urlencode }}&page={{ page_obj.next_page_number }}">{% trans "Next" %}</a>
     {% if paginator.num_pages != page_obj.next_page_number %}
         <a href="?page={{ page_obj.paginator.num_pages }}">{{ page_obj.paginator.num_pages }}</a>
     {% endif %}
@@ -70,9 +73,9 @@ News
 
 <p></p>
 
-<h2> Sumbit Your Own News </h2>
+<h2> {% trans "Sumbit Your Own News" %} </h2>
 
-<a href="{% url 'create' %}"><button type="button">Submit</button>
+<a href="{% url 'create' %}"><button type="button">{% trans "Submit" %}</button>
 </a>
 
 

@@ -1,9 +1,9 @@
 {% extends 'flatpages/default.html' %}
-
+{% load i18n %}
 {% load custom_filters %}
 
 {% block title %}
-News
+{% trans "News" %}
 {% endblock title %}
 {% block content %}
 <h1>{{ news_detail.name|censor_bad_words|safe }}</h1>
@@ -11,20 +11,20 @@ News
 
 
 <a href="{% url 'news_form' news_detail.pk %}">
-<button type="button">Edit this news</button>
+<button type="button">{% trans "Edit this news" %}</button>
 </a>
-<p>Current news ID: {{ news_detail.pk }}</p>
+<p>{% trans "Current news ID:" %} {{ news_detail.pk }}</p>
 
 
 
 <a href="{% url 'news_delete' news_detail.pk %}">
-<button type="button">Delete this news</button>
+<button type="button">{% trans "Delete this news" %}</button>
 </a>
 
 
 
 <a href="{% url 'news_list' %}">
-<button type="button">Cancel</button>
+<button type="button">{% trans "Cancel" %}</button>
 </a>
 
 

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-07-31 00:12+0300\n"
+"POT-Creation-Date: 2024-08-02 23:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,7 +20,24 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\app\models.py:17
+#: .\app\filters.py:9
+msgid "Post name contains"
+msgstr "Имя новости содержит"
+
+#: .\app\filters.py:13
+msgid "Description contains"
+msgstr "Описание содержит"
+
+#: .\app\filters.py:17
+msgid "Category name contains"
+msgstr "Название категории содержит"
+
+#: .\app\filters.py:23
+msgid "Published date greater than or equal to"
+msgstr "Дата публикации больше или равна"
+
+#: .\app\models.py:17 .\templates\news_detail.html:6
+#: .\templates\news_list.html:6
 msgid "News"
 msgstr "Новости"
 
@@ -36,10 +53,164 @@ msgstr "Категории"
 msgid "Subscriptions"
 msgstr "Подписки"
 
-#: .\app\views.py:195
-msgid "Hello world"
-msgstr "Привет Мир"
+#: .\app\views.py:188
+msgid "Hello world! This is the index page!"
+msgstr "Привет мир! Это индексная страница"
 
 #: .\fpages\admin.py:11
 msgid "Advanced options"
 msgstr "Расширенные опции"
+
+#: .\templates\flatpages\default.html:36
+msgid "Check out my new cool translation"
+msgstr "Зацени мой крутой перевод!"
+
+#: .\templates\flatpages\default.html:50
+msgid "NEWS FINANCE (censored)"
+msgstr "НОВОСТИ ФИНАНСОВ(цензура)"
+
+#: .\templates\flatpages\default.html:60
+msgid "Stock Market"
+msgstr "Рынок акций"
+
+#: .\templates\flatpages\default.html:63
+msgid "Economics"
+msgstr "Экономика"
+
+#: .\templates\flatpages\default.html:66
+msgid "Housing"
+msgstr "Недвижимость"
+
+#: .\templates\flatpages\default.html:72
+msgid "Sign UP"
+msgstr "Регистрация"
+
+#: .\templates\flatpages\default.html:75 .\templates\login.html:16
+msgid "Login"
+msgstr "Логин"
+
+#: .\templates\flatpages\default.html:78
+msgid "Logout"
+msgstr "Выход"
+
+#: .\templates\flatpages\default.html:95
+msgid "Become an Author!"
+msgstr "Стань автором"
+
+#: .\templates\flatpages\default.html:100
+msgid "Welcome,"
+msgstr "Добро пожаловать,"
+
+#: .\templates\flatpages\default.html:102
+msgid "Now you can edit news,"
+msgstr "Теперь вы можете редактировать новости,"
+
+#: .\templates\flatpages\default.html:105
+msgid "Guest!"
+msgstr "Гость!"
+
+#: .\templates\flatpages\default.html:105
+msgid "(Please log in or sign up to edit news)"
+msgstr ""
+"(Пожалуйста, войдите или зарегистрируйтесь, для того, чтобы редактровать "
+"новости)"
+
+#: .\templates\news_by_category.html:9
+msgid "News in"
+msgstr "Новости"
+
+#: .\templates\news_by_category.html:13
+msgid "Subscribe to email notifications of this category!"
+msgstr "Подписаться на уведомления этой категории"
+
+#: .\templates\news_by_category.html:22 .\templates\news_list.html:32
+msgid "Published on:"
+msgstr "Опубликовано>"
+
+#: .\templates\news_by_category.html:25
+msgid "No news in this category."
+msgstr "В этой категории нет новостей."
+
+#: .\templates\news_delete.html:4
+msgid "Delete News"
+msgstr "Удалить новость"
+
+#: .\templates\news_delete.html:8
+msgid "Deleting"
+msgstr "Удаляю"
+
+#: .\templates\news_delete.html:13 .\templates\news_detail.html:27
+#: .\templates\news_form.html:15 .\templates\news_form.html:19
+msgid "Cancel"
+msgstr "Отмена"
+
+#: .\templates\news_detail.html:14
+msgid "Edit this news"
+msgstr "Изменить эту новость"
+
+#: .\templates\news_detail.html:16
+msgid "Current news ID:"
+msgstr "ИН текущей новости"
+
+#: .\templates\news_detail.html:21
+msgid "Delete this news"
+msgstr "Удалить новость"
+
+#: .\templates\news_form.html:5
+msgid "Submit News"
+msgstr "Загрузить новость"
+
+#: .\templates\news_form.html:10 .\templates\news_list.html:78
+msgid "Submit"
+msgstr "Загрузить"
+
+#: .\templates\news_list.html:10
+msgid "All news"
+msgstr "Все новости"
+
+#: .\templates\news_list.html:18
+msgid "Search"
+msgstr "Искать"
+
+#: .\templates\news_list.html:21
+msgid "Reset Search"
+msgstr "Сбросить поиск"
+
+#: .\templates\news_list.html:29
+msgid "Name"
+msgstr "Название"
+
+#: .\templates\news_list.html:30
+msgid "Description"
+msgstr "Описание"
+
+#: .\templates\news_list.html:31
+msgid "Category"
+msgstr "Категории"
+
+#: .\templates\news_list.html:56
+msgid "Previous"
+msgstr "Назад"
+
+#: .\templates\news_list.html:67
+msgid "Next"
+msgstr "Вперед"
+
+#: .\templates\news_list.html:76
+msgid "Sumbit Your Own News"
+msgstr "Загрузи свою собственную новость"
+
+#: .\templates\signup.html:5 .\templates\signup.html:14
+msgid "Sign Up"
+msgstr "Регистрация"
+
+#: .\templates\signup.html:16
+msgid "Already have an account?"
+msgstr "Уже есть аккаунт?"
+
+#: .\templates\signup.html:16
+msgid "Log In"
+msgstr "Войти"
+
+#~ msgid "Hello world"
+#~ msgstr "Привет Мир"

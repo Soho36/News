@@ -1,8 +1,8 @@
 <!--THIS HTML CAN BE USED AS CUSTOM TEMPLATE (WHEN ALLAUTH DISABLED)-->
 {% extends 'flatpages/default.html' %}
-
+{% load i18n %}
 {% block title %}
-Sign Up
+{% trans "Sign Up" %}
 {% endblock title %}
 
 {% block content %}
@@ -11,8 +11,8 @@ Sign Up
     <form method="post">
         {% csrf_token %}
         {{ form.as_p }}
-        <button type="submit">Sign Up</button>
+        <button type="submit">{% trans "Sign Up" %}</button>
     </form>
-    <p>Already have an account? <a href="{% url 'login' %}">Log In</a></p>
+    <p>{% trans "Already have an account?" %}<a href="{% url 'login' %}">{% trans "Log In" %}</a></p>
 
 {% endblock content %}

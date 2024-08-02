@@ -30,7 +30,7 @@ class News(models.Model):
 
 class Category(models.Model):
 
-    name = models.CharField(max_length=100, unique=True, help_text=_('category name'))
+    name = models.CharField(max_length=100, unique=True, help_text=_('category name'))  # help_text goes to admin panel
 
     class Meta:
         verbose_name_plural = _("Categories")

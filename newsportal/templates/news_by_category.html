@@ -1,16 +1,16 @@
 {% extends 'flatpages/default.html' %}
-
+{% load i18n %}
 {% load custom_filters %}
 {% block title %}
 {{ category.name }} News
 {% endblock title %}
 
 {% block content %}
-<h1>News in {{ category.name }}</h1>
+<h1>{% trans "News in" %}{{ category.name }}</h1>
 <hr>
 
 <a href="{% url 'subscribe_to_category' category.id %}">
-    <button type="button">Subscribe to email notifications of this category!</button>
+    <button type="button">{% trans "Subscribe to email notifications of this category!" %}</button>
 </a>
 
 <hr>
@@ -19,10 +19,10 @@
         <li>
             <h2><a href="{% url 'news_detail' news.pk %}">{{ news.name|censor_bad_words|truncatewords:7 }}</a></h2>
             <p>{{ news.description|truncatewords:30|safe }}</p>
-            <p><strong>Published on:</strong> <i>{{ news.published_date }}</i></p>
+            <p><strong>{% trans "Published on:" %}</strong> <i>{{ news.published_date }}</i></p>
         </li>
     {% empty %}
-        <li>No news in this category.</li>
+        <li>{% trans "No news in this category." %}</li>
     {% endfor %}
 </ul>
 <hr>
