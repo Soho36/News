@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-01 23:43+0300\n"
+"POT-Creation-Date: 2024-08-02 23:15+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,19 +20,19 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: .\app\filters.py:11
+#: .\app\filters.py:9
 msgid "Post name contains"
 msgstr "Имя новости содержит"
 
-#: .\app\filters.py:16
-msgid "Category name contains"
-msgstr "Название категории содержит"
-
-#: .\app\filters.py:21
+#: .\app\filters.py:13
 msgid "Description contains"
 msgstr "Описание содержит"
 
-#: .\app\filters.py:28
+#: .\app\filters.py:17
+msgid "Category name contains"
+msgstr "Название категории содержит"
+
+#: .\app\filters.py:23
 msgid "Published date greater than or equal to"
 msgstr "Дата публикации больше или равна"
 
@@ -123,7 +123,7 @@ msgstr "Новости"
 msgid "Subscribe to email notifications of this category!"
 msgstr "Подписаться на уведомления этой категории"
 
-#: .\templates\news_by_category.html:22 .\templates\news_list.html:29
+#: .\templates\news_by_category.html:22 .\templates\news_list.html:32
 msgid "Published on:"
 msgstr "Опубликовано>"
 
@@ -160,7 +160,7 @@ msgstr "Удалить новость"
 msgid "Submit News"
 msgstr "Загрузить новость"
 
-#: .\templates\news_form.html:10 .\templates\news_list.html:75
+#: .\templates\news_form.html:10 .\templates\news_list.html:78
 msgid "Submit"
 msgstr "Загрузить"
 
@@ -172,27 +172,31 @@ msgstr "Все новости"
 msgid "Search"
 msgstr "Искать"
 
-#: .\templates\news_list.html:26
+#: .\templates\news_list.html:21
+msgid "Reset Search"
+msgstr "Сбросить поиск"
+
+#: .\templates\news_list.html:29
 msgid "Name"
 msgstr "Название"
 
-#: .\templates\news_list.html:27
+#: .\templates\news_list.html:30
 msgid "Description"
 msgstr "Описание"
 
-#: .\templates\news_list.html:28
+#: .\templates\news_list.html:31
 msgid "Category"
 msgstr "Категории"
 
-#: .\templates\news_list.html:53
+#: .\templates\news_list.html:56
 msgid "Previous"
 msgstr "Назад"
 
-#: .\templates\news_list.html:64
+#: .\templates\news_list.html:67
 msgid "Next"
 msgstr "Вперед"
 
-#: .\templates\news_list.html:73
+#: .\templates\news_list.html:76
 msgid "Sumbit Your Own News"
 msgstr "Загрузи свою собственную новость"
 

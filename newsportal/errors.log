@@ -394,3 +394,168 @@ Traceback (most recent call last):
     raise NoReverseMatch(msg)
 django.urls.exceptions.NoReverseMatch: Reverse for 'news_by_category' with keyword arguments '{'category_name': 'Stock Market'}' not found. 1 pattern(s) tried: ['category/(?P<category_slug>[-a-zA-Z0-9_]+)/\\Z']
 2024-08-01 22:24:22,048 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\servers\basehttp.py "GET /news/ HTTP/1.1" 500 216951 None
+2024-08-02 00:17:02,408 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\log.py Internal Server Error: /news/ (<class 'django.core.exceptions.FieldError'>, FieldError("Unsupported lookup 'ru' for CharField or join on the field not permitted."), <traceback object at 0x05919608>)
+Traceback (most recent call last):
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\newsportal\app\views.py", line 55, in get_queryset
+    return self.filterset.qs
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django_filters\filterset.py", line 231, in qs
+    qs = self.filter_queryset(qs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django_filters\filterset.py", line 214, in filter_queryset
+    queryset = self.filters[name].filter(queryset, value)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django_filters\filters.py", line 159, in filter
+    qs = self.get_method(qs)(**{lookup: value})
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\modeltranslation\manager.py", line 307, in _filter_or_exclude
+    return super(MultilingualQuerySet, self)._filter_or_exclude(negate, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\sql\query.py", line 1492, in build_filter
+    condition = self.build_lookup(lookups, col, value)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\sql\query.py", line 1306, in build_lookup
+    lhs = self.try_transform(lhs, name)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\sql\query.py", line 1357, in try_transform
+    raise FieldError(
+django.core.exceptions.FieldError: Unsupported lookup 'ru' for CharField or join on the field not permitted.
+2024-08-02 00:17:02,415 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\servers\basehttp.py "GET /news/?post_name=&description=&category_name=%D0%A0%D1%8B%D0%BD%D0%BE%D0%BA&published_date= HTTP/1.1" 500 185214 None
+2024-08-02 14:23:49,408 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\log.py Internal Server Error: /news/ (<class 'django.core.exceptions.FieldError'>, FieldError("Cannot resolve keyword 'post_name' into field. Choices are: author, author_id, category, category_id, description, description_en_us, description_ru, id, name, name_en_us, name_ru, published_date"), <traceback object at 0x05747468>)
+Traceback (most recent call last):
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\newsportal\app\views.py", line 55, in get_queryset
+    return self.filterset.qs
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django_filters\filterset.py", line 231, in qs
+    qs = self.filter_queryset(qs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django_filters\filterset.py", line 214, in filter_queryset
+    queryset = self.filters[name].filter(queryset, value)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django_filters\filters.py", line 159, in filter
+    qs = self.get_method(qs)(**{lookup: value})
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\modeltranslation\manager.py", line 307, in _filter_or_exclude
+    return super(MultilingualQuerySet, self)._filter_or_exclude(negate, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\sql\query.py", line 1427, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\sql\query.py", line 1237, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\sql\query.py", line 1725, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'post_name' into field. Choices are: author, author_id, category, category_id, description, description_en_us, description_ru, id, name, name_en_us, name_ru, published_date
+2024-08-02 14:23:49,413 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\servers\basehttp.py "GET /news/?post_name=%D0%A6%D0%B5%D0%BD%D1%8B&description=&category_name=&published_date= HTTP/1.1" 500 184192 None
+2024-08-02 14:25:50,928 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\log.py Internal Server Error: /news/ (<class 'django.core.exceptions.FieldError'>, FieldError("Cannot resolve keyword 'post_name' into field. Choices are: author, author_id, category, category_id, description, description_en_us, description_ru, id, name, name_en_us, name_ru, published_date"), <traceback object at 0x04438108>)
+Traceback (most recent call last):
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\decorators.py", line 134, in _wrapper_view
+    response = view_func(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\base.py", line 143, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\generic\list.py", line 154, in get
+    self.object_list = self.get_queryset()
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\newsportal\app\views.py", line 55, in get_queryset
+    return self.filterset.qs
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django_filters\filterset.py", line 231, in qs
+    qs = self.filter_queryset(qs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django_filters\filterset.py", line 214, in filter_queryset
+    queryset = self.filters[name].filter(queryset, value)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django_filters\filters.py", line 159, in filter
+    qs = self.get_method(qs)(**{lookup: value})
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\query.py", line 1436, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\modeltranslation\manager.py", line 307, in _filter_or_exclude
+    return super(MultilingualQuerySet, self)._filter_or_exclude(negate, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\query.py", line 1454, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\query.py", line 1461, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\sql\query.py", line 1546, in add_q
+    clause, _ = self._add_q(q_object, self.used_aliases)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\sql\query.py", line 1577, in _add_q
+    child_clause, needed_inner = self.build_filter(
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\sql\query.py", line 1427, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\sql\query.py", line 1237, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\db\models\sql\query.py", line 1725, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'post_name' into field. Choices are: author, author_id, category, category_id, description, description_en_us, description_ru, id, name, name_en_us, name_ru, published_date
+2024-08-02 14:25:50,932 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\servers\basehttp.py "GET /news/?post_name=%D0%94%D0%BE%D1%85%D0%BE%D0%B4%D1%8B&description=&category_name=&published_date= HTTP/1.1" 500 184344 None
+2024-08-02 22:13:24,507 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\log.py Internal Server Error: /news/ (<class 'ModuleNotFoundError'>, ModuleNotFoundError("No module named 'your_app'"), <traceback object at 0x0570D488>)
+Traceback (most recent call last):
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 173, in render
+    with context.bind_template(self):
+  File "C:\Users\Liikurserv\AppData\Local\Programs\Python\Python38-32\lib\contextlib.py", line 113, in __enter__
+    return next(self.gen)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\context.py", line 251, in bind_template
+    processors = template.engine.template_context_processors + self._processors
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\engine.py", line 116, in template_context_processors
+    return tuple(import_string(path) for path in context_processors)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\engine.py", line 116, in <genexpr>
+    return tuple(import_string(path) for path in context_processors)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+  File "C:\Users\Liikurserv\AppData\Local\Programs\Python\Python38-32\lib\importlib\__init__.py", line 127, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 961, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 219, in _call_with_frames_removed
+  File "<frozen importlib._bootstrap>", line 1014, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 991, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 973, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'your_app'
+2024-08-02 22:13:24,510 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\servers\basehttp.py "GET /news/ HTTP/1.1" 500 136214 None

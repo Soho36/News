@@ -17,9 +17,12 @@
 
        <button type="submit">{% trans "Search" %}</button>
 
-<!--       <button type="reset">Reset</button>-->
+       <a href="{% url 'news_list' %}">
+           <button type="button">{% trans "Reset Search" %}</button>
+       </a>
 
    </form>
+
 <hr>
 <table>
        <tr>

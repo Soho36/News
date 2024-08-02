@@ -244,7 +244,7 @@ LOGGING = {
 
     'handlers': {
         'console': {
-            'level': 'ERROR',
+            'level': 'INFO',
             'filters': ['require_debug_true'],
             'class': 'logging.StreamHandler',   # Send log messages to the console
             'formatter': 'simple'
