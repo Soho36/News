@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-08-02 23:15+0300\n"
+"POT-Creation-Date: 2024-08-04 01:48+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -53,7 +53,7 @@ msgstr "Категории"
 msgid "Subscriptions"
 msgstr "Подписки"
 
-#: .\app\views.py:188
+#: .\app\views.py:196
 msgid "Hello world! This is the index page!"
 msgstr "Привет мир! Это индексная страница"
 
@@ -61,55 +61,67 @@ msgstr "Привет мир! Это индексная страница"
 msgid "Advanced options"
 msgstr "Расширенные опции"
 
-#: .\templates\flatpages\default.html:36
+#: .\templates\flatpages\default.html:40
+msgid "Time zone:"
+msgstr "Часовой пояс: "
+
+#: .\templates\flatpages\default.html:49
+msgid "Current Timezone:"
+msgstr "Текущий часовой пояс: "
+
+#: .\templates\flatpages\default.html:50
+msgid "Current Time:"
+msgstr "Время сейчас: "
+
+#: .\templates\flatpages\default.html:53
 msgid "Check out my new cool translation"
 msgstr "Зацени мой крутой перевод!"
 
-#: .\templates\flatpages\default.html:50
+#: .\templates\flatpages\default.html:67
 msgid "NEWS FINANCE (censored)"
 msgstr "НОВОСТИ ФИНАНСОВ(цензура)"
 
-#: .\templates\flatpages\default.html:60
+#: .\templates\flatpages\default.html:77
 msgid "Stock Market"
 msgstr "Рынок акций"
 
-#: .\templates\flatpages\default.html:63
+#: .\templates\flatpages\default.html:80
 msgid "Economics"
 msgstr "Экономика"
 
-#: .\templates\flatpages\default.html:66
+#: .\templates\flatpages\default.html:83
 msgid "Housing"
 msgstr "Недвижимость"
 
-#: .\templates\flatpages\default.html:72
+#: .\templates\flatpages\default.html:89
 msgid "Sign UP"
 msgstr "Регистрация"
 
-#: .\templates\flatpages\default.html:75 .\templates\login.html:16
+#: .\templates\flatpages\default.html:92 .\templates\login.html:16
 msgid "Login"
 msgstr "Логин"
 
-#: .\templates\flatpages\default.html:78
+#: .\templates\flatpages\default.html:95
 msgid "Logout"
 msgstr "Выход"
 
-#: .\templates\flatpages\default.html:95
+#: .\templates\flatpages\default.html:112
 msgid "Become an Author!"
 msgstr "Стань автором"
 
-#: .\templates\flatpages\default.html:100
+#: .\templates\flatpages\default.html:117
 msgid "Welcome,"
 msgstr "Добро пожаловать,"
 
-#: .\templates\flatpages\default.html:102
+#: .\templates\flatpages\default.html:119
 msgid "Now you can edit news,"
 msgstr "Теперь вы можете редактировать новости,"
 
-#: .\templates\flatpages\default.html:105
+#: .\templates\flatpages\default.html:122
 msgid "Guest!"
 msgstr "Гость!"
 
-#: .\templates\flatpages\default.html:105
+#: .\templates\flatpages\default.html:122
 msgid "(Please log in or sign up to edit news)"
 msgstr ""
 "(Пожалуйста, войдите или зарегистрируйтесь, для того, чтобы редактровать "

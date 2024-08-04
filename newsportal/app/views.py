@@ -14,7 +14,9 @@ from allauth.account.views import LoginView, SignupView
 from datetime import datetime
 from django.core.cache import cache
 from django.utils.translation import gettext as _
-from django.http import HttpResponse
+from django.http.response import HttpResponse
+from django.utils import timezone
+import pytz     # Standard module to work with Time Zones
 
 
 def signup(request):
@@ -57,7 +59,12 @@ class NewsList(ListView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['filterset'] = self.filterset
+        print(context)
         return context
+
+    def post(self, request):
+        request.session['django_timezone'] = request.POST['timezone']
+        return redirect('news_list')    # Redirect back to the news list page
 
 
 class NewsDetail(DetailView):
@@ -188,15 +195,3 @@ class Index(View):
         string = _('Hello world! This is the index page!')
 
         return HttpResponse(string)
-
-
-# class Index(View):
-#     def get(self, request):
-#         # . Translators: This message appears on the home page only
-#         models = News.objects.all()
-#
-#         context = {
-#             'models': models,
-#         }
-#
-#         return HttpResponse(render(request, 'default.html', context))
