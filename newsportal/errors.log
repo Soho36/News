@@ -999,3 +999,70 @@ Traceback (most recent call last):
     response = get_response(request)
 TypeError: 'dict' object is not callable
 2024-08-04 21:57:56,070 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\servers\basehttp.py "GET /favicon.ico HTTP/1.1" 500 64990 None
+2024-08-04 22:50:50,033 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\log.py Internal Server Error: /news/ (<class 'django.template.exceptions.TemplateSyntaxError'>, TemplateSyntaxError("Invalid filter: 'int'"), <traceback object at 0x058D30E8>)
+Traceback (most recent call last):
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\smartif.py", line 179, in translate_token
+    op = OPERATORS[token]
+KeyError: 'current_time|timezone:TIME_ZONE|date:"H"|int'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\backends\django.py", line 61, in render
+    return self.template.render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\engine.py", line 157, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 200, in compile_nodelist
+    return parser.parse()
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 513, in parse
+    raise self.error(token, e)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 511, in parse
+    compiled_result = compile_func(self, token)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\defaulttags.py", line 952, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\defaulttags.py", line 885, in __init__
+    super().__init__(*args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\smartif.py", line 170, in __init__
+    mapped_tokens.append(self.translate_token(token))
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\smartif.py", line 181, in translate_token
+    return self.create_var(token)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\defaulttags.py", line 888, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 600, in compile_filter
+    return FilterExpression(token, self)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 698, in __init__
+    filter_func = parser.find_filter(filter_name)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\template\base.py", line 606, in find_filter
+    raise TemplateSyntaxError("Invalid filter: '%s'" % filter_name)
+django.template.exceptions.TemplateSyntaxError: Invalid filter: 'int'
+2024-08-04 22:50:50,038 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\servers\basehttp.py "GET /news/ HTTP/1.1" 500 283335 None

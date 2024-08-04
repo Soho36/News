@@ -14,6 +14,18 @@
 
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="{% static 'css/styles.css' %}" rel="stylesheet" />
+
+    <!-- Night theme shifter-->
+    <style>
+        body {
+        background-color: {% if current_hour >= 22 or current_hour <= 7 %}
+            powderblue
+        {% else %}
+            white
+        {% endif %};
+    }
+    </style>
+
     </head>
 
 <body>
