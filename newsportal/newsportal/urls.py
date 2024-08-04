@@ -16,14 +16,18 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from django.views.generic import TemplateView
 
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     path('admin/', admin.site.urls),
     path('pages/', include('django.contrib.flatpages.urls')),
     path('', include('app.urls')),
-    path('accounts/', include('allauth.urls')), # Include allauth URLs
-    # path('appointments/', include(('appointment.urls', 'appointments'), namespace='appointments')),
+    path('accounts/', include('allauth.urls')),     # Include allauth URLs
+    path('swagger-ui/', TemplateView.as_view(
+        template_name='swagger-ui.html',
+        extra_context={'schema_url': '/static/openapi-schema.yml'}
+    ), name='swagger-ui'),
 ]
 
 
