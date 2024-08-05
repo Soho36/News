@@ -1082,3 +1082,91 @@ Traceback (most recent call last):
     raise TemplateDoesNotExist(", ".join(template_name_list), chain=chain)
 django.template.exceptions.TemplateDoesNotExist: swagger-ui.html
 2024-08-05 00:27:24,365 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\servers\basehttp.py "GET /swagger-ui/ HTTP/1.1" 500 83147 None
+2024-08-05 23:44:17,410 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\log.py Internal Server Error: /newsss/ (<class 'django.core.exceptions.ImproperlyConfigured'>, ImproperlyConfigured('Field name `__all__` is not valid for model `News` in `app.serializers.NewsSerializer`.'), <traceback object at 0x05325F48>)
+Traceback (most recent call last):
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\serializers.py", line 713, in to_representation
+    return [
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\serializers.py", line 714, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\serializers.py", line 523, in to_representation
+    for field in fields:
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `__all__` is not valid for model `News` in `app.serializers.NewsSerializer`.
+2024-08-05 23:44:17,419 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\servers\basehttp.py "GET /newsss/ HTTP/1.1" 500 152954 None
+2024-08-05 23:44:19,457 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\log.py Internal Server Error: /newsss/ (<class 'django.core.exceptions.ImproperlyConfigured'>, ImproperlyConfigured('Field name `__all__` is not valid for model `News` in `app.serializers.NewsSerializer`.'), <traceback object at 0x058AE5C8>)
+Traceback (most recent call last):
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\viewsets.py", line 124, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\views.py", line 509, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\views.py", line 469, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\views.py", line 480, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\views.py", line 506, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\mixins.py", line 46, in list
+    return Response(serializer.data)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\serializers.py", line 795, in data
+    ret = super().data
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\serializers.py", line 249, in data
+    self._data = self.to_representation(self.instance)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\serializers.py", line 713, in to_representation
+    return [
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\serializers.py", line 714, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\serializers.py", line 523, in to_representation
+    for field in fields:
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\serializers.py", line 384, in _readable_fields
+    for field in self.fields.values():
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\utils\functional.py", line 57, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\serializers.py", line 372, in fields
+    for key, value in self.get_fields().items():
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\serializers.py", line 1103, in get_fields
+    field_class, field_kwargs = self.build_field(
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\serializers.py", line 1249, in build_field
+    return self.build_unknown_field(field_name, model_class)
+  File "C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\rest_framework\serializers.py", line 1367, in build_unknown_field
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: Field name `__all__` is not valid for model `News` in `app.serializers.NewsSerializer`.
+2024-08-05 23:44:19,458 ERROR C:\Users\Liikurserv\PycharmProjects\Django_projects\venv\lib\site-packages\django\core\servers\basehttp.py "GET /newsss/ HTTP/1.1" 500 152954 None

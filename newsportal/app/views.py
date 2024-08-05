@@ -16,7 +16,18 @@ from django.core.cache import cache
 from django.utils.translation import gettext as _
 from django.http.response import HttpResponse
 from django.utils import timezone
-import pytz     # Standard module to work with Time Zones
+from rest_framework import viewsets
+from .serializers import NewsSerializer, CategorySerializer
+
+
+class NewsViewSet(viewsets.ModelViewSet):
+    queryset = News.objects.all()
+    serializer_class = NewsSerializer
+
+
+class CategoryViewSet(viewsets.ModelViewSet):
+    queryset = Category.objects.all()
+    serializer_class = CategorySerializer
 
 
 def signup(request):

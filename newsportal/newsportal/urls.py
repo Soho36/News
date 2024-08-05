@@ -17,17 +17,28 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from django.views.generic import TemplateView
+from rest_framework.routers import DefaultRouter
+from app.views import NewsViewSet, CategoryViewSet
+from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
+
+router = DefaultRouter()
+router.register(r'newsapi', NewsViewSet)
+router.register(r'categoryapi', CategoryViewSet)
 
 urlpatterns = [
     path('i18n/', include('django.conf.urls.i18n')),
     path('admin/', admin.site.urls),
     path('pages/', include('django.contrib.flatpages.urls')),
     path('', include('app.urls')),
+    path('', include(router.urls)),
     path('accounts/', include('allauth.urls')),     # Include allauth URLs
     path('swagger-ui/', TemplateView.as_view(
         template_name='swagger-ui.html',
-        extra_context={'schema_url': '/static/openapi-schema.yml'}
+        extra_context={'schema_url': '/static/schema.yaml'}
     ), name='swagger-ui'),
+    path('api/schema/', SpectacularAPIView.as_view(), name='schema'),
+    path('api/schema/swagger-ui/', SpectacularSwaggerView.as_view(url_name='schema'), name='swagger-ui'),
+    path('api/schema/redoc/', SpectacularRedocView.as_view(url_name='schema'), name='redoc'),
 ]
 
 
